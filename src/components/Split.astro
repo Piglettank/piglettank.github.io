@@ -1,0 +1,130 @@
+---
+// No JavaScript needed for this CSS-only hover effect
+---
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>X Shape Layout with Hover</title>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #000; /* Optional background color */
+            }
+
+            .container {
+                position: relative;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            .triangle {
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                transform: translate(-50%, -50%);
+                justify-content: center;
+                align-items: center;
+                top: 50%;
+                left: 50%;
+                opacity: 0.3; /* Slightly transparent by default */
+                transition: opacity 0.2s ease-out; /* Smooth transition for the effect */
+            }
+            .backgroundCircle {
+                position: absolute;
+                border-radius: 50%;
+                border-color: aquamarine;
+                border-style: solid;
+                border-width: 2px;
+                width: 602px;
+                height: 602px;
+                transform: translate(-50%, -50%);
+                justify-content: center;
+                align-items: center;
+                top: 50%;
+                left: 50%;
+            }
+
+            .triangle:hover {
+                opacity: 1; /* Fully opaque on hover */
+            }
+
+            .top-left {
+                clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+                background: linear-gradient(
+                    to right,
+                    rgb(225, 122, 111),
+                    rgb(226, 221, 202)
+                );
+                /* background-color: rgb(169, 68, 68); Example color */
+                border-radius: 50%;
+            }
+
+            .bottom-right {
+                clip-path: polygon(100% 100%, 50% 50%, 100% 0);
+                border-radius: 50%;
+                background-color: #00f; /* Example color */
+            }
+
+            .top-right {
+                border-radius: 50%;
+                clip-path: polygon(100% 0, 50% 50%, 0 0);
+                background-color: #0f0; /* Example color */
+            }
+
+            .bottom-left {
+                border-radius: 50%;
+                clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
+                background-color: #ff0; /* Example color */
+            }
+
+            .center-box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 150px; /* Adjust as needed */
+                height: 150px; /* Adjust as needed */
+                background-color: #333;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.2em;
+                border: 2px solid white;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                border-radius: 50%;
+                z-index: 2; /* Ensure the box is on top */
+            }
+
+            /* Ensure triangles are behind the box */
+            .top-left,
+            .top-right {
+                z-index: 1;
+            }
+
+            .bottom-right,
+            .bottom-left {
+                z-index: 2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top-left triangle"></div>
+            <div class="bottom-right triangle"></div>
+            <div class="top-right triangle"></div>
+            <div class="bottom-left triangle"></div>
+            <div class="backgroundCircle"></div>
+            <div class="center-box">
+                <p>🍠 Johan</p>
+            </div>
+        </div>
+    </body>
+</html>
