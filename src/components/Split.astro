@@ -1,5 +1,19 @@
 ---
-// No JavaScript needed for this CSS-only hover effect
+const colors = {
+    background: "#b5828c",
+    topLeft:
+        "linear-gradient(to right, rgb(225, 122, 111), rgb(226, 221, 202))",
+    bottomRight: "#00f",
+    topRight: "#0f0",
+    bottomLeft: "#ff0",
+    centerBox: "#333",
+    borderCircle: "aquamarine",
+};
+
+// #FFCDB2
+// #FFB4A2
+// #E5989B
+// #B5828C
 ---
 
 <html lang="en">
@@ -14,7 +28,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: #000; /* Optional background color */
+                background-color: #282528; /* Optional background color */
             }
 
             .container {
@@ -57,11 +71,7 @@
 
             .top-left {
                 clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
-                background: linear-gradient(
-                    to right,
-                    rgb(225, 122, 111),
-                    rgb(226, 221, 202)
-                );
+                background: linear-gradient(to right, #ffcdb2, #ffb4a2);
                 /* background-color: rgb(169, 68, 68); Example color */
                 border-radius: 50%;
             }
@@ -117,7 +127,9 @@
     </head>
     <body>
         <div class="container">
-            <div class="top-left triangle"></div>
+            <a href="https://example.com" class="">
+                <div class="top-left triangle"></div>
+            </a>
             <div class="bottom-right triangle"></div>
             <div class="top-right triangle"></div>
             <div class="bottom-left triangle"></div>
