@@ -1,3 +1,8 @@
+---
+import piglettank from "../assets/piglettank.png";
+import { Image } from 'astro:assets'; 
+---
+
 <html>
     <head>
         <style>
@@ -6,6 +11,7 @@
                 width: 200px;
                 background-color: #888888;
                 border-radius: 16px;
+                background-image: {piglettank};
             }
             .body {
                 max-width: 1080px;
@@ -18,8 +24,20 @@
             .card {
                 width: 400px;
                 height: 200px;
+                background-color: #f4f2ea;
                 border-radius: 16px;
-                background-color: #888;
+                border-color: lightpink;
+                border-width: 3px;
+                display: block;
+                cursor: pointer;
+            }
+            .card:hover {
+                width: 400px;
+                height: 220px;
+                background-color: #cfcbb7;
+                border-radius: 16px;
+                border-color: lightpink;
+                border-width: 3px;
             }
 
             h1 {
@@ -30,11 +48,18 @@
             }
         </style>
     </head>
-    <body class="body">
-        <div class="portrait"></div>
+    <body class="body" style="background-color: whitesmoke;">
+        <Image
+            src={piglettank}
+            alt="is me babie"
+            class="portrait"
+        />
         <div class="column" , style="margin-left: 20px;">
             <h1>Name Lastname</h1>
-            <div class="card"></div>
+            <a class="card" href="https://frilans-flame.netlify.app/">
+                <h1>Frilans Flame</h1>
+                <p>Click here to see my portfolio</p>
+            </a>
         </div>
     </body>
 </html>
