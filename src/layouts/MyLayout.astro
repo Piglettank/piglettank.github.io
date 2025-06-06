@@ -1,0 +1,49 @@
+---
+import piglettank from "../assets/piglettank.png";
+import { Image } from "astro:assets";
+---
+
+<html lang="en">
+  <head>
+    <style>
+      :root {
+        --glow: #af4f41;
+        --charcoal: #181316;
+        --rose: #9b6a6c;
+        --myWhite: #FFEBD2;
+      }
+      .portrait {
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+      }
+      body {
+        margin: auto;
+        max-width: 1080px;
+        font-family: Verdana;
+        background-color: var(--charcoal);
+        color: var(--myWhite);
+      }
+      body {
+        margin: 20px, 20px;
+        max-width: 1080px;
+        width: 100%;
+        font-family: Verdana;
+        background-color: var(--charcoal);
+        color: var(--myWhite);
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: block;">
+      <Image src={piglettank} alt="is me babieee" class="portrait" />
+      <h1 style="display: inline;">Piglettank</h1>
+    </div>
+    <a href="/">Home </a>
+    <a href="/about/">About </a>
+    <a href="/blog/">Blog</a>
+    <a href="/experiment/">Experiment</a>
+    <slot />
+    
+  </body>
+</html>
