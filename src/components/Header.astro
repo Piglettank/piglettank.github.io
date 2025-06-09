@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  link: string;
+}
+
+const { title, link } = Astro.props;
+---
+
+<html>
+  <head>
+    <style>
+      a {
+        color: var(--myWhite);
+        padding: 8px 16px;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-size: 12px;
+        box-sizing: border-box;
+        border-bottom: solid transparent;
+        border-width: 1px;
+      }
+      a:hover {
+        color: var(--glow);
+        border-bottom: solid var(--glow);
+        border-width: 1px;
+      }
+    </style>
+  </head>
+  <a href={link}>{title}</a>
+
+
+</html>

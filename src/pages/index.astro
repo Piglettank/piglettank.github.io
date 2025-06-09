@@ -2,15 +2,44 @@
 import Layout from "../layouts/MyLayout.astro";
 import Card from "../components/Card.astro";
 import ff_logo from "../assets/ff_logo.png";
+import piglettank from "../assets/piglettank.png";
+import { Image } from "astro:assets";
 import ff_game_gif from "../assets/ff_game_gif.gif";
 ---
 
 <Layout>
-	<Card
-        image = {ff_logo},
-        gif = {ff_game_gif},
-        title = "Frilans Flame",
-        description = "Dinorun but with Frilans Finans stank. Play in browser.",
-        link = "https://frilans-flame.netlify.app",   
-    />
+  <style>
+    .container {
+      display: flex;
+      height: 70vh;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
+      gap: 40px;
+      width: 100%;
+    }
+
+    .text {
+      flex: 1;
+      max-width: 500px;
+      color: var(--myWhite);
+    }
+    .image {
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+  </style>
+
+  <div class="container">
+    <Image src={piglettank} alt="Picture of me" class="image" />
+    <div class="text">
+      <h1>Johan Fallberg</h1>
+      <p>
+        Frontend developer aspiring to be the bridge between artists and
+        programmers
+      </p>
+    </div>
+  </div>
 </Layout>

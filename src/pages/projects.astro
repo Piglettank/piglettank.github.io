@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/MyLayout.astro";
+import Card from "../components/Card.astro";
+import ff_logo from "../assets/ff_logo.png";
+import ff_game_gif from "../assets/ff_game_gif.gif";
+---
+
+<Layout>
+  <h1>Projects</h1>
+  <Card
+    image={ff_logo}
+    gif={ff_game_gif}
+    title="Frilans Flame"
+    description="Dinorun but with Frilans Finans stank. Play in browser."
+    link="https://frilans-flame.netlify.app"
+    imageAlt="Frilans Flame Logo"
+    gifAlt="Frilans Flame Game Preview"
+  />
+</Layout>

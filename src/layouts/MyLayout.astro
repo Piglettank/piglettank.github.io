@@ -1,49 +1,45 @@
 ---
 import piglettank from "../assets/piglettank.png";
+import starry_sky from "../assets/starry_sky.png";
 import { Image } from "astro:assets";
+import { BackgroundImage } from "astro-imagetools/components";
+import Header from "../components/Header.astro";
 ---
 
 <html lang="en">
   <head>
     <style>
       :root {
-        --glow: #af4f41;
+        --glow: #e98a7b;
         --charcoal: #181316;
         --rose: #9b6a6c;
-        --myWhite: #FFEBD2;
-      }
-      .portrait {
-        height: 40px;
-        width: 40px;
-        border-radius: 100%;
+        --myWhite: #ffebd2;
       }
       body {
         margin: auto;
+        padding-left: 20px;
+        padding-right: 20px;
         max-width: 1080px;
         font-family: Verdana;
-        background-color: var(--charcoal);
         color: var(--myWhite);
+        background-color: var(--charcoal);
       }
-      body {
-        margin: 20px, 20px;
-        max-width: 1080px;
-        width: 100%;
-        font-family: Verdana;
-        background-color: var(--charcoal);
-        color: var(--myWhite);
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        margin: 30px 30px 30px 30px;
       }
     </style>
   </head>
   <body>
-    <div style="display: block;">
-      <Image src={piglettank} alt="is me babieee" class="portrait" />
-      <h1 style="display: inline;">Piglettank</h1>
-    </div>
-    <a href="/">Home </a>
-    <a href="/about/">About </a>
-    <a href="/blog/">Blog</a>
-    <a href="/experiment/">Experiment</a>
+    <BackgroundImage src={starry_sky} alt="Starry sky background" />
+    <header>
+      <Header title="HOME" link="/" />
+      <Header title="PROJECTS" link="/projects/" />
+      <Header title="EXPERIMENT" link="/experiment/" />
+    </header>
     <slot />
-    
   </body>
 </html>
