@@ -1,20 +1,21 @@
 ---
-import piglettank from "../assets/piglettank.png";
-import starry_sky from "../assets/starry_sky.png";
-import { Image } from "astro:assets";
-import { BackgroundImage } from "astro-imagetools/components";
+import starry_sky from "../assets/sky.jpg";
 import Header from "../components/Header.astro";
+
+const backgroundUrl = starry_sky.src;
+// jeremy-bishop-G9i_plbfDgk-unsplash
 ---
 
 <html lang="en">
   <head>
+    <meta charset=utf-8>
     <style>
       :root {
         --glow: #e98a7b;
         --charcoal: #181316;
         --rose: #9b6a6c;
         --myWhite: #ffebd2;
-      }
+        }
       body {
         margin: auto;
         padding-left: 20px;
@@ -23,6 +24,7 @@ import Header from "../components/Header.astro";
         font-family: Verdana;
         color: var(--myWhite);
         background-color: var(--charcoal);
+        background-size: cover;
       }
 
       header {
@@ -31,10 +33,10 @@ import Header from "../components/Header.astro";
         justify-content: end;
         margin: 30px 30px 30px 30px;
       }
+
     </style>
   </head>
-  <body>
-    <BackgroundImage src={starry_sky} alt="Starry sky background" />
+  <body style={`background-image: url(${backgroundUrl})  `}>
     <header>
       <Header title="HOME" link="/" />
       <Header title="PROJECTS" link="/projects/" />
