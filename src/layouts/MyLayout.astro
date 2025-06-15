@@ -34,13 +34,23 @@ const backgroundUrl = starry_sky.src;
         margin: 30px 30px 30px 30px;
       }
 
+      a:link {
+        color: var(--glow);
+      }
+      a:visited {
+        color: var(--rose);
+      }
+
     </style>
   </head>
-  <body style={`background-image: url(${backgroundUrl})  `}>
+  <!-- <body style={`background-image: url(${backgroundUrl})  `}> -->
+  <body>
+      
     <header>
       <Header title="HOME" link="/" />
       <Header title="PROJECTS" link="/projects/" />
-      <Header title="EXPERIMENT" link="/experiment/" />
+      <Header title="RED BLOG" link="/red-blog/" />
+      <!-- <Header title="EXPERIMENT" link="/experiment/" /> -->
     </header>
     <slot />
   </body>

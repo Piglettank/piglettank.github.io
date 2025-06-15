@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/MyLayout.astro";
 import piglettank from "../assets/piglettank.png";
+import pillow from "../assets/pillow.png";
 import { Image } from "astro:assets";
 
 const greetings = [
@@ -35,20 +36,39 @@ const greeting = greetings.at(index);
       color: var(--myWhite);
     }
     .image {
-      width: 200px;
-      height: 200px;
+      width: 400px;
+      height: 400px;
       border-radius: 100%;
       object-fit: cover;
+    }
+
+    @media screen and (max-width: 760px) {
+      .image {
+        height: 240px;
+        width: 240px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+      .container {
+        display: flex;
+        height: 70vh;
+        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+        gap: 40px;
+        width: 100%;
+      }
     }
   </style>
 
   <div class="container">
-    <Image src={piglettank} alt="Me about to smash" class="image" />
+    <Image src={pillow} alt="Me about to smash" class="image" />
     <div class="text">
       <h1>🍠 {greeting}</h1>
-      <p>
-        Welcome to the swine domain. Enjoy my collection of shits 💩
-      </p>
+      <p>Welcome to the swine domain. Enjoy my collection of crap</p>
     </div>
   </div>
 </Layout>
