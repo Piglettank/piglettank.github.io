@@ -37,8 +37,11 @@ A capitalist does not make your working conditions better just because he has mo
 
 Democracy is great! But where is my party that removes the assets of the top 1% and redistributes them to the workers? Where is my party that calls for 4 hour work days? I don't see it.
 
-## 5. Criminality
+## 5. Criminality / gang violence
 
-Main reason for people doing crime? Poverty, low socio-economic status.
+Main reason for people doing crime? Poverty, low socio-economic status. 
 Solution? Arrest them.
 No. Solution is reduce the difference in socio-economic status. Even a dumbass can see that.
+
+Poor economy is not the only reason of course. But many of the other reasons, such as parental neglect, crowded homes often stem from overworked parents or not being able to buy a spacious home. [This article](https://www.justice.gc.ca/eng/rp-pr/csj-sjc/crime/rr06_6/p2.html) shows some of the data of conditions calling to crime.
+That being said, not all crime will be solved by reducing the wealth gap. But certainly a large portion of it.
