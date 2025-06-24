@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import games from "../assets/games.png";
+import gamesHover from "../assets/games_hover.png";
+---
+
+<style>
+  .block {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--rose);
+    border-radius: 16px;
+    border: solid 1px var(--rose);
+    padding: 8px;
+  }
+
+  .imageWrapper {
+    width: 64px;
+    height: 64px;
+    position: relative;
+  }
+
+  .games {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .gamesHover {
+    position: absolute;
+    opacity: 0%;
+    height: 100%;
+    width: 100%;
+  }
+
+  .block:hover {
+    outline-color: var(--myWhite);
+    outline-width: 2px;
+    color: var(--glow);
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .block:hover .games {
+    opacity: 0;
+  }
+  .block:hover .gamesHover {
+    opacity: 1;
+  }
+</style>
+
+<a class="block" href="/projects">
+  <div class="imageWrapper">
+    <Image alt="games" src={games} class="games" />
+    <Image alt="games" src={gamesHover} class="gamesHover" />
+  </div>
+
+  <h4 style="margin-left: 4px;">Games</h4>
+</a>

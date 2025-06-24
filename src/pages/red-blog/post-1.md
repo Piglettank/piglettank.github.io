@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MyLayout.astro
-title: 'Top 5 contradictions'
-pubDate: 2022-07-01
-description: 'This is my first post'
+title: "Capitalism's top 5 contradictions"
+pubDate: 2025-06-21
+description: "Using Mao Zedong's theory of contradictions to explore my opinion on faults of capitalism"
 author: 'Pig'
 image: 
     url: 'https://docs.astro.build/assets/rose.webp'
@@ -36,6 +36,8 @@ A capitalist does not make your working conditions better just because he has mo
 ## 4. No parlament party is the worker's party
 
 Democracy is great! But where is my party that removes the assets of the top 1% and redistributes them to the workers? Where is my party that calls for 4 hour work days? I don't see it.
+
+There are also significant political issues that are simply not discussed by the parties. Currently, Sweden is exporting a large amount of weapons to UAE. These weapons are being used for disgusting crimes towards Yemen. I have no power to stop this a citizen of this country.  
 
 ## 5. Criminality / gang violence
 

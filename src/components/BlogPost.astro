@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: string;
+  href: string | undefined;
+}
+
+const { title, description, href, pubDate } = Astro.props;
+const dateOptions: object = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+const formattedPublishDate = new Date(pubDate).toLocaleDateString(
+  "en-US",
+  dateOptions
+);
+---
+
+<style>
+  a {
+    font-style: normal;
+    text-decoration: none;
+    color: var(--rose);
+  }
+
+  a:hover {
+    color: var(--glow);
+  }
+
+  .post {
+    cursor: pointer;
+    padding: 12px;
+    height: fit-content;
+    width: fit-content;
+  }
+
+  h3 {
+    margin: 0px;
+  }
+
+  p {
+    margin: 0px;
+    margin-top: 8px;
+  }
+
+  .topRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .date {
+    font-size: 12px;
+    color: var(--myWhite);
+    opacity: 80%;
+  }
+</style>
+
+<a class="post" href={href}>
+  <div class="topRow">
+    <h3>
+      {title}
+    </h3>
+    <div class="date">
+      {formattedPublishDate}
+    </div>
+  </div>
+  <p style="color: var(--myWhite);">
+    {description}
+  </p>
+</a>

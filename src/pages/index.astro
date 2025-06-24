@@ -1,21 +1,8 @@
 ---
 import Layout from "../layouts/MyLayout.astro";
-import piglettank from "../assets/piglettank.png";
-import pillow from "../assets/pillow.png";
+import pig from "../assets/pig.png";
 import { Image } from "astro:assets";
-
-const greetings = [
-  "Ça va",
-  "Hola",
-  "Shalom",
-  "押忍!",
-  "Tjenixen!",
-  "Howdy!",
-  "Moin moin",
-  "Привіт",
-];
-const index = Math.floor(Math.random() * greetings.length);
-const greeting = greetings.at(index);
+import Games from "../components/Games.astro";
 ---
 
 <Layout>
@@ -65,10 +52,31 @@ const greeting = greetings.at(index);
   </style>
 
   <div class="container">
-    <Image src={pillow} alt="Me about to smash" class="image" />
+    <Image src={pig} alt="Me about to smash" class="image" />
     <div class="text">
-      <h1>🍠 {greeting}</h1>
+      <h1>&nbsp;</h1>
       <p>Welcome to the swine domain. Enjoy my collection of crap</p>
+      <Games />
     </div>
   </div>
 </Layout>
+
+<script>
+  const greetings = [
+    "Ça va",
+    "¡Buenas!",
+    "Shalom",
+    "おっす",
+    // "押忍!",
+    "Tjenixen!",
+    "Howdy!",
+    "Moin moin",
+    "Привіт",
+  ];
+  const index = Math.floor(Math.random() * greetings.length);
+  const greeting = greetings.at(index);
+  const title = document.querySelector("h1");
+  if (title) {
+    title.textContent = `🍠 ${greeting}`;
+  }
+</script>
