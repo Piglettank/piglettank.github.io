@@ -8,19 +8,19 @@ const backgroundUrl = starry_sky.src;
 
 <html lang="en">
   <head>
-    <meta charset=utf-8>
+    <meta charset="utf-8" />
     <style>
       :root {
         --glow: #f8aa62;
         --charcoal: #181316;
         --rose: #e98a7b;
         --myWhite: #ffebd2;
-        }
+      }
       body {
         margin: auto;
         padding-left: 20px;
         padding-right: 20px;
-        max-width: 1080px;
+        max-width: 920px;
         font-family: Verdana;
         color: var(--myWhite);
         background-color: var(--charcoal);
@@ -40,18 +40,16 @@ const backgroundUrl = starry_sky.src;
       a:visited {
         color: var(--rose);
       }
-
     </style>
   </head>
   <!-- <body style={`background-image: url(${backgroundUrl})  `}> -->
   <body>
-      
-    <header>
+    <!-- <header>
       <Header title="HOME" link="/" />
       <Header title="PROJECTS" link="/projects/" />
       <Header title="RED BLOG" link="/red-blog/" />
-      <!-- <Header title="EXPERIMENT" link="/experiment/" /> -->
-    </header>
+       <Header title="EXPERIMENT" link="/experiment/" />
+    </header> -->
     <slot />
   </body>
 </html>
