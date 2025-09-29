@@ -2,8 +2,8 @@
 import Layout from "../layouts/MyLayout.astro";
 import pig from "../assets/pig.png";
 import { Image } from "astro:assets";
-import Games from "../components/Games.astro";
-import Card from "../components/Card.astro";
+import Games from "../components/GamesHeader.astro";
+import Card from "../components/GameCard.astro";
 import ff_logo from "../assets/ff_logo.png";
 import ff_game_gif from "../assets/ff_game_gif.gif";
 import flubbermonkeys_logo from "../assets/flubbermonkeys_logo.png";
@@ -15,9 +15,6 @@ import SocialMediaLink from "../components/SocialMediaLink.astro";
 
 <Layout>
   <style>
-    p {
-      line-height: 150%;
-    }
     .landing-page {
       display: flex;
       height: 100svh;
@@ -53,7 +50,7 @@ import SocialMediaLink from "../components/SocialMediaLink.astro";
         object-fit: contain;
       }
       h1 {
-        font-size: 26px;
+        font-size: 30px;
       }
       .landing-page {
         display: flex;
@@ -93,7 +90,8 @@ import SocialMediaLink from "../components/SocialMediaLink.astro";
       </div>
     </div>
   </div>
-  <h1 style="margin-left: 8px;">Projects</h1>
+
+  <Games />
   <Card
     image={flubbermonkeys_logo}
     gif={flubbermonkeys_gif}

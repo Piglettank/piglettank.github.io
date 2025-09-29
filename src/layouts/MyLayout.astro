@@ -10,6 +10,10 @@ const backgroundUrl = starry_sky.src;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Shantell Sans"
+    />
     <style>
       :root {
         --glow: #f8aa62;
@@ -17,12 +21,45 @@ const backgroundUrl = starry_sky.src;
         --rose: #e98a7b;
         --myWhite: #ffebd2;
       }
+
+      :global(h1),
+      :global(h2),
+      :global(h3),
+      :global(h4),
+      :global(h5),
+      :global(h6) {
+        font-family: "Shantell Sans", cursive, sans-serif;
+      }
+
+      :global(h1) {
+        font-size: 36px;
+      }
+      :global(h2) {
+        font-size: 26px;
+      }
+      :global(h3) {
+        font-size: 22px;
+      }
+      :global(h4) {
+        font-size: 18px;
+      }
+      :global(h5) {
+        font-size: 14px;
+      }
+      :global(h6) {
+        font-size: 12px;
+      }
+
+      :global(p) {
+        line-height: 150%;
+        font-family: "Verdana", Arial, sans-serif;
+      }
+
       body {
         margin: auto;
         padding-left: 20px;
         padding-right: 20px;
         max-width: 920px;
-        font-family: Verdana;
         color: var(--myWhite);
         background-color: var(--charcoal);
         background-size: cover;
