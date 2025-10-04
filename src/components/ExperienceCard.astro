@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  image: ImageMetadata;
+  imageAlt: string;
+  title: string;
+  description: string;
+  id: string;
+}
+
+const { image, imageAlt, title, description, id } = Astro.props;
+const imageSize = 60;
+---
+
+<style>
+  p {
+    line-height: 150%;
+    font-size: 15px;
+    font-family: "Shantell Sans", cursive, sans-serif;
+  }
+
+  h4 {
+    font-family: "Shantell Sans", cursive, sans-serif;
+  }
+  .card {
+    border-radius: 16px;/
+    color: var(--myWhite);
+    padding: 12px;
+    border: solid 1px transparent;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    cursor: pointer;
+  }
+  .card:hover {
+    background-color: var(--hoverOverlay);
+    /* border: solid var(--glow); */
+  }
+  .cardImage {
+    border-radius: 8px;
+    padding: 0px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .text-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .tag-wrapper {
+    display: flex;
+  }
+</style>
+
+<div class="card" id={id}>
+  <Image
+    src={image}
+    alt={imageAlt}
+    width={imageSize}
+    height={imageSize}
+    class="cardImage"
+  />
+  <div style="width: 16px;"></div>
+  <div class="text-wrapper">
+    <h4 style="margin: 0;">{title}</h4>
+    <p style="margin-top: 2px; margin-bottom: 0;">
+      {description}
+    </p>
+  </div>
+</div>

@@ -12,13 +12,22 @@ interface Props {
   tags?: string[];
 }
 
-const { image, gif, title, description, link, tags = [] } = Astro.props;
+const {
+  image,
+  imageAlt,
+  gif,
+  gifAlt,
+  title,
+  description,
+  link,
+  tags = [],
+} = Astro.props;
 ---
 
 <style>
   p {
     line-height: 150%;
-    font-family: "Verdana", Arial, sans-serif;
+    font-family: "Shantell Sans", cursive, sans-serif;
   }
 
   h3 {
@@ -36,7 +45,7 @@ const { image, gif, title, description, link, tags = [] } = Astro.props;
     cursor: pointer;
   }
   .card:hover {
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: var(--hoverOverlay);
     /* border: solid var(--glow); */
   }
   .card:hover .cardPreviewImage {
@@ -88,8 +97,8 @@ const { image, gif, title, description, link, tags = [] } = Astro.props;
 
 <a class="card" href={link} target="_blank">
   <div class="cardPreview">
-    <Image src={image} alt="frilans finans logo" class="cardPreviewImage" />
-    <Image src={gif} alt="frilans finans logo" class="cardPreviewGif" />
+    <Image src={image} alt={imageAlt} class="cardPreviewImage" />
+    <Image src={gif} alt={gifAlt} class="cardPreviewGif" />
   </div>
   <div style="width: 16px;"></div>
   <div class="text-wrapper">

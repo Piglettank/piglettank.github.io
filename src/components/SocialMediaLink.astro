@@ -13,12 +13,12 @@ const { image, alt, link } = Astro.props;
 <style>
   .style {
     border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--gentleOutline);
     padding: 10px;
     background-color: rgba(255, 255, 255, 0);
   }
   .style:hover {
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: var(--hoverOverlay);
   }
 </style>
 

@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import starry_sky from "../assets/sky.jpg";
 import Header from "../components/Header.astro";
+import background from "../assets/background.png";
 
-const backgroundUrl = starry_sky.src;
+const backgroundUrl = background;
 // jeremy-bishop-G9i_plbfDgk-unsplash
 ---
 
@@ -19,7 +21,9 @@ const backgroundUrl = starry_sky.src;
         --glow: #f8aa62;
         --charcoal: #181316;
         --rose: #e98a7b;
+        --gentleOutline: #e98a7b66;
         --myWhite: #ffebd2;
+        --hoverOverlay: rgba(255, 255, 255, 0.054);
       }
 
       :global(h1),
@@ -52,17 +56,43 @@ const backgroundUrl = starry_sky.src;
 
       :global(p) {
         line-height: 150%;
-        font-family: "Verdana", Arial, sans-serif;
+        font-family: "Shantell Sans", cursive, sans-serif;
+      }
+
+      :global(ul) {
+        padding-left: 16px;
+      }
+      :global(li) {
+        margin: 0;
+        padding-bottom: 8px;
+        line-height: 150%;
+        font-family: "Shantell Sans", cursive, sans-serif;
       }
 
       body {
+        background-color: var(--charcoal);
+        color: var(--myWhite);
+      }
+
+      .child {
         margin: auto;
         padding-left: 20px;
         padding-right: 20px;
         max-width: 920px;
-        color: var(--myWhite);
-        background-color: var(--charcoal);
         background-size: cover;
+      }
+
+      .top {
+        display: flex;
+        height: 100svh;
+        align-items: center;
+        align-self: center;
+        justify-content: center;
+        background-size: auto;
+        background-repeat: no-repeat;
+        /* background-color: #e98a7b; */
+        gap: 40px;
+        width: 100%;
       }
 
       header {
@@ -88,6 +118,11 @@ const backgroundUrl = starry_sky.src;
       <Header title="RED BLOG" link="/red-blog/" />
        <Header title="EXPERIMENT" link="/experiment/" />
     </header> -->
-    <slot />
+    <!-- <div class="top">
+      <Image class={"top"} src={backgroundUrl} alt={"backgruond"} />
+    </div> -->
+    <div class="child">
+      <slot />
+    </div>
   </body>
 </html>

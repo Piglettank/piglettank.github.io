@@ -1,0 +1,20 @@
+---
+interface Props {
+  header: string;
+  id: string;
+  hide?: boolean;
+}
+
+const { header, id, hide = false } = Astro.props;
+const displayString = hide ? "display: none" : "display: block";
+---
+
+<style define:vars="{{hide}}">
+  .section {
+  }
+</style>
+
+<div class="section" id={id} style={displayString}>
+  <h4 style="margin: 0">{header}</h4>
+  <slot />
+</div>

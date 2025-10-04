@@ -1,0 +1,149 @@
+---
+import GameCard from "../GameCard.astro";
+import ExperienceCard from "../ExperienceCard.astro";
+import ExperienceDetails from "../ExperienceDetails.astro";
+import Games from "../GamesHeader.astro";
+import ff_logo from "../../assets/ff_logo.png";
+import farmup_logo from "../../assets/farmup.png";
+import uu_logo from "../../assets/uu.png";
+---
+
+<style>
+  .experience-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+  .left {
+    flex: 2;
+  }
+  .right {
+    background-color: #e98a7b22;
+    border-radius: 12px;
+    border: 1px solid #e98a7b44;
+    padding: 24px;
+    flex: 3;
+  }
+</style>
+
+<h2>Experience</h2>
+<div class="experience-section">
+  <div class="left">
+    <ExperienceCard
+      image={ff_logo}
+      title="Frilans Finans"
+      description="Frontend developer"
+      imageAlt="Frilans Flame Logo"
+      id="experience1"
+    />
+    <ExperienceCard
+      image={farmup_logo}
+      title="FarmUp"
+      description="Product designer"
+      imageAlt="Frilans Flame Logo"
+      id="experience2"
+    />
+    <ExperienceCard
+      image={uu_logo}
+      title="Uppsala University"
+      description="Game design and graphics"
+      imageAlt="Frilans Flame Logo"
+      id="experience3"
+    />
+  </div>
+  <div style="width: 20px"></div>
+  <div class="right" id="details">
+    <ExperienceDetails header="Frilans Finans" id="details1">
+      <ul>
+        <li>Doing continuous updates for a product with a large user base</li>
+        <li>Improving CI/CD workflows</li>
+        <li>Filling a smaller, more specific role in a bigger team</li>
+      </ul>
+    </ExperienceDetails>
+    <ExperienceDetails header="FarmUp" id="details2" hide={true}>
+      <ul>
+        <li>Co-founder since the company's beginning</li>
+        <li>Built the company to a monthly recurring revenue of 200'000 sek</li>
+        <li>
+          Responsible for design and user experience, as well as front-end
+          programming in the Flutter framework
+        </li>
+        <li>
+          Providing material for presentaons, markeng campaigns and built the
+          homepage
+        </li>
+      </ul>
+    </ExperienceDetails>
+    <ExperienceDetails
+      header="Game design and graphics bachelor"
+      id="details3"
+      hide={true}
+    >
+      <ul>
+        <li>Improved understanding of designing user experiences</li>
+        <li>
+          Developed skills in 3D-modelling, animations, shaders and particle
+          effects
+        </li>
+        <li>Experience of working efficiently in teams</li>
+      </ul>
+    </ExperienceDetails>
+  </div>
+</div>
+
+<script>
+  var currentlyShownDetails = 1;
+
+  const experience1 = document.getElementById("experience1");
+  const experience2 = document.getElementById("experience2");
+  const experience3 = document.getElementById("experience3");
+  const details = document.getElementById("details");
+
+  window.onload = function (e) {
+    if (experience1) experience1.style.borderColor = "#e98a7b66";
+  };
+
+  experience1?.addEventListener("click", (_) => {
+    toggleDetails(1);
+  });
+
+  experience2?.addEventListener("click", (_) => {
+    toggleDetails(2);
+  });
+
+  experience3?.addEventListener("click", (_) => {
+    toggleDetails(3);
+  });
+
+  function toggleDetails(index: number) {
+    const detailsId = `details${currentlyShownDetails}`;
+    const experienceId = `experience${currentlyShownDetails}`;
+
+    if (currentlyShownDetails === index) {
+      if (details) details.style.display = "none";
+      const detailsDoc = document.getElementById(detailsId);
+      const experienceDoc = document.getElementById(experienceId);
+      if (detailsDoc) detailsDoc.style.display = "none";
+      if (experienceDoc) experienceDoc.style.borderColor = "transparent";
+
+      currentlyShownDetails = 0;
+    } else {
+      if (details) details.style.display = "flex";
+
+      const doc = document.getElementById(detailsId);
+      const doc2 = document.getElementById(experienceId);
+      if (doc) doc.style.display = "none";
+      if (doc2) doc2.style.borderColor = "transparent";
+
+      const toBeShown = `details${index}`;
+      const detailsDoc = document.getElementById(toBeShown);
+      if (detailsDoc) detailsDoc.style.display = "block";
+
+      const outline = `experience${index}`;
+      const experienceDoc = document.getElementById(outline);
+      if (experienceDoc) experienceDoc.style.borderColor = "#e98a7b66";
+
+      currentlyShownDetails = index;
+    }
+  }
+</script>
