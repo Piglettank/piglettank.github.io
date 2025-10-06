@@ -80,7 +80,7 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
     <Image src={pig} alt="Me about to smash" class="heroImage" />
     <div class="text">
       <h1 style="margin-bottom: 0px;">&nbsp;</h1>
-      <p style="margin-top: 8px;">Welcome my website. Enjoy your stay</p>
+      <p style="margin-top: 8px;">Welcome my website. Enjoy your stay!</p>
       <div class="social-media-links">
         <SocialMediaLink
           image={github_white}
@@ -126,9 +126,6 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
 </Layout>
 
 <script>
-  var selectedExperience = 0;
-  var sweetPotato = `🍠`;
-
   const greetings = [
     "Ça va",
     "¡Buenas!",
@@ -145,9 +142,5 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
   const title = document.querySelector("h1");
   if (title) {
     title.textContent = `${greeting}`;
-  }
-
-  function selectExperience(value) {
-    selectedExperience = value;
   }
 </script>
