@@ -3,8 +3,9 @@ import { Image } from "astro:assets";
 import starry_sky from "../assets/sky.jpg";
 import Header from "../components/Header.astro";
 import background from "../assets/background.png";
+import name from "../assets/namestamp.png";
+import me from "../assets/pig_2.png";
 
-const backgroundUrl = background;
 // jeremy-bishop-G9i_plbfDgk-unsplash
 ---
 
@@ -95,6 +96,26 @@ const backgroundUrl = background;
         width: 100%;
       }
 
+      .backgroundImage {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+
+      .namestamp {
+        position: absolute;
+        right: 10%;
+        height: 100%;
+        width: auto;
+      }
+
+      .me {
+        position: absolute;
+        left: 20%;
+        height: auto;
+        width: 30%;
+      }
+
       header {
         display: flex;
         align-items: center;
@@ -110,7 +131,7 @@ const backgroundUrl = background;
       }
     </style>
   </head>
-  <!-- <body style={`background-image: url(${backgroundUrl})  `}> -->
+  <!-- <body style={`background-backgroundImage: url(${backgroundUrl})  `}> -->
   <body>
     <!-- <header>
       <Header title="HOME" link="/" />
@@ -119,7 +140,9 @@ const backgroundUrl = background;
        <Header title="EXPERIMENT" link="/experiment/" />
     </header> -->
     <!-- <div class="top">
-      <Image class={"top"} src={backgroundUrl} alt={"backgruond"} />
+      <Image class={"backgroundImage"} src={background} alt={"backgruond"} />
+      <Image class={"namestamp"} src={name} alt={"backgruond"} />
+      <Image class={"me"} src={me} alt={"backgruond"} />
     </div> -->
     <div class="child">
       <slot />

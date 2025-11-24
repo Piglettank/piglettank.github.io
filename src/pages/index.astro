@@ -11,9 +11,10 @@ import ff_game_gif from "../assets/ff_game_gif.gif";
 import flubbermonkeys_logo from "../assets/flubbermonkeys_logo.png";
 import flubbermonkeys_gif from "../assets/flubbermonkeys_gif.gif";
 import github_white from "../assets/github_white.png";
-import linkedin_white from "../assets/linkedin_white.png";
+import youtube_white from "../assets/youtube_white.png";
 import SocialMediaLink from "../components/SocialMediaLink.astro";
 import ExperienceSection from "../components/sections/ExperienceSection.astro";
+import { Experience } from "../components/ReactExperience.tsx";
 ---
 
 <Layout>
@@ -88,9 +89,9 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
           link="https://github.com/piglettank"
         />
         <SocialMediaLink
-          image={linkedin_white}
-          alt="LinkedIn"
-          link="https://www.linkedin.com/in/johan-fallberg/"
+          image={youtube_white}
+          alt="Youtube"
+          link="https://www.youtube.com/user/Piglettank"
         />
       </div>
     </div>
@@ -121,6 +122,7 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
   />
   <div style="height: 160px;"></div>
 
+  <Experience addedString="asdf" />
   <ExperienceSection />
   <div style="height: 320px;"></div>
 </Layout>
