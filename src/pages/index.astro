@@ -3,6 +3,7 @@ import Layout from "../layouts/MyLayout.astro";
 import pig from "../assets/pig.png";
 import { Image } from "astro:assets";
 import Games from "../components/GamesHeader.astro";
+import Tools from "../components/Tools.astro";
 import GameCard from "../components/GameCard.astro";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import ExperienceDetails from "../components/ExperienceDetails.astro";
@@ -10,8 +11,11 @@ import ff_logo from "../assets/ff_logo.png";
 import ff_game_gif from "../assets/ff_game_gif.gif";
 import flubbermonkeys_logo from "../assets/flubbermonkeys_logo.png";
 import flubbermonkeys_gif from "../assets/flubbermonkeys_gif.gif";
+import pokemon_logo from "../assets/pokemon_chart.png";
+import pokemon_gif from "../assets/pokemon_chart_gif.gif";
 import github_white from "../assets/github_white.png";
 import youtube_white from "../assets/youtube_white.png";
+import linkedin_white from "../assets/linkedin_white.png";
 import SocialMediaLink from "../components/SocialMediaLink.astro";
 import ExperienceSection from "../components/sections/ExperienceSection.astro";
 import { Experience } from "../components/ReactExperience.tsx";
@@ -93,6 +97,11 @@ import { Experience } from "../components/ReactExperience.tsx";
           alt="Youtube"
           link="https://www.youtube.com/user/Piglettank"
         />
+        <SocialMediaLink
+          image={linkedin_white}
+          alt="LinkedIn"
+          link="https://www.linkedin.com/in/johan-fallberg/"
+        />
       </div>
     </div>
   </div>
@@ -108,8 +117,6 @@ import { Experience } from "../components/ReactExperience.tsx";
     gifAlt="Flubbermonkeys Game Preview"
     tags={["Unity"]}
   />
-  <!-- <div class="divider" style="margin: 8px; "></div> -->
-
   <GameCard
     image={ff_logo}
     gif={ff_game_gif}
@@ -119,6 +126,18 @@ import { Experience } from "../components/ReactExperience.tsx";
     imageAlt="Frilans Flame Logo"
     gifAlt="Frilans Flame Game Preview"
     tags={["Flutter", "Flame"]}
+  />
+
+  <Tools />
+  <GameCard
+    image={pokemon_logo}
+    gif={pokemon_gif}
+    title="Pokémon Type Chart"
+    description="Interactive Pokémon type chart. Hosted on Netlify."
+    link="https://pokemon-chart.netlify.app/"
+    imageAlt="Pokémon Type Chart screenshot"
+    gifAlt="Pokémon Type Chart preview"
+    tags={["Flutter"]}
   />
   <div style="height: 160px;"></div>
 
