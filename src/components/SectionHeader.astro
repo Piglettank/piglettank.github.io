@@ -1,7 +1,16 @@
 ---
 import { Image } from "astro:assets";
-import games from "../assets/games.png";
-import gamesHover from "../assets/games_hover.png";
+
+interface Props {
+  image: ImageMetadata;
+  hoverImage: ImageMetadata;
+  title: string;
+  ref: string;
+}
+
+const { image, hoverImage, title, ref } = Astro.props;
+const imageAlt = `${title} picture`;
+const hoverImageAlt = `${title} hovered`;
 ---
 
 <style>
@@ -21,12 +30,12 @@ import gamesHover from "../assets/games_hover.png";
     position: relative;
   }
 
-  .games {
+  .header-image {
     position: absolute;
     height: 100%;
     width: 100%;
   }
-  .gamesHover {
+  .header-image-hover {
     position: absolute;
     opacity: 0%;
     height: 100%;
@@ -39,19 +48,19 @@ import gamesHover from "../assets/games_hover.png";
     color: var(--glow);
   }
 
-  .block:hover .games {
+  .block:hover .header-image {
     opacity: 0;
   }
-  .block:hover .gamesHover {
+  .block:hover .header-image-hover {
     opacity: 1;
   }
 </style>
 
-<a class="block" href="#games" name="games">
+<a class="block" href={`#${ref}`} name={ref}>
   <div class="imageWrapper">
-    <Image alt="games" src={games} class="games" />
-    <Image alt="games" src={gamesHover} class="gamesHover" />
+    <Image alt={imageAlt} src={image} class="header-image" />
+    <Image alt={hoverImageAlt} src={hoverImage} class="header-image-hover" />
   </div>
 
-  <h2 style="margin-left: 4px;">Games</h2>
+  <h2 style="margin-left: 4px;">{title}</h2>
 </a>
