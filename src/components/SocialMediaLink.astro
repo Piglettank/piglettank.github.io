@@ -8,21 +8,61 @@ interface Props {
 }
 
 const { image, alt, link } = Astro.props;
+
+// Create a simple rotation based on alt text for variety
+const rotations = { GitHub: 2, Youtube: -1, LinkedIn: 1.5 };
+const rotation = rotations[alt as keyof typeof rotations] || 0;
 ---
 
-<style>
-  .style {
-    border-radius: 4px;
-    border: 1px solid var(--gentleOutline);
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0);
+<style define:vars={{ rotation: `${rotation}deg` }}>
+  .link-wrapper {
+    display: inline-block;
+    transform: rotate(var(--rotation));
+    transition: all 0.3s ease;
   }
-  .style:hover {
+
+  .style {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    border: 2.5px solid var(--rose);
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all 0.3s ease;
+    position: relative;
+    filter: url(#sketchy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link-wrapper:hover {
+    transform: rotate(-3deg) scale(1.1);
+  }
+
+  .link-wrapper:hover .style {
     background-color: var(--hoverOverlay);
+    border-color: var(--glow);
+    border-radius: 55% 45% 48% 52% / 52% 58% 42% 48%;
   }
 </style>
 
-<a href={link} target="_blank" style="style">
+<svg style="position: absolute; width: 0; height: 0;">
+  <filter id="sketchy">
+    <feTurbulence
+      type="fractalNoise"
+      baseFrequency="0.05"
+      numOctaves="3"
+      result="noise"
+      seed="2"></feTurbulence>
+    <feDisplacementMap
+      in="SourceGraphic"
+      in2="noise"
+      scale="3"
+      xChannelSelector="R"
+      yChannelSelector="G"></feDisplacementMap>
+  </filter>
+</svg>
+
+<a href={link} target="_blank" class="link-wrapper">
   <div class="style">
     <Image src={image} alt={alt} width={28} height={28} />
   </div>

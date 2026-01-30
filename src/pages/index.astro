@@ -40,6 +40,22 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
       max-width: 540px;
       color: var(--myWhite);
     }
+
+    #title {
+      cursor: pointer;
+      user-select: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    #title:hover {
+      color: var(--glow);
+      transform: scale(1.05);
+    }
+
+    #title:active {
+      transform: scale(0.98);
+    }
     .hero-image {
       width: 400px;
       height: 400px;
@@ -86,7 +102,15 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
   <div class="hero-section">
     <Image src={pig} alt="Me about to smash" class="hero-image" />
     <div class="text">
-      <h1 id="title" style="margin-bottom: 0px;">&nbsp;</h1>
+      <h1
+        id="title"
+        style="margin-bottom: 0px;"
+        role="button"
+        tabindex="0"
+        aria-label="Click to cycle through greetings in different languages"
+      >
+        &nbsp;
+      </h1>
       <p style="margin-top: 8px;">Welcome my website. Enjoy your stay!</p>
       <div class="social-media-links">
         <SocialMediaLink
@@ -170,10 +194,30 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
     "Moin moin",
     "Привіт",
   ];
-  const index = Math.floor(Math.random() * greetings.length);
-  const greeting = greetings.at(index);
+
+  let currentIndex = Math.floor(Math.random() * greetings.length);
   const title = document.getElementById("title");
+
   if (title) {
-    title.textContent = `${greeting}`;
+    // Set initial greeting
+    title.textContent = greetings[currentIndex];
+
+    // Function to cycle greeting
+    const cycleGreeting = () => {
+      // Cycle to next greeting
+      currentIndex = (currentIndex + 1) % greetings.length;
+      title.textContent = greetings[currentIndex];
+    };
+
+    // Add click event listener
+    title.addEventListener("click", cycleGreeting);
+
+    // Add keyboard event listener for accessibility
+    title.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        cycleGreeting();
+      }
+    });
   }
 </script>

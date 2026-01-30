@@ -41,6 +41,7 @@ const {
     text-decoration: none;
     align-items: center;
     cursor: pointer;
+    transition: all 0.3s ease;
   }
   .card:hover {
     background-color: var(--hoverOverlay);
@@ -51,15 +52,15 @@ const {
   .image-wrapper {
     height: 100px;
     width: 100px;
-    border-radius: 8px;
     padding: 0px;
     position: relative;
     flex-shrink: 0;
+    mask: url(#brush-mask);
+    -webkit-mask: url(#brush-mask);
   }
   .image {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
     transition: opacity 0.3s ease;
     position: absolute;
     z-index: 2;
@@ -67,7 +68,6 @@ const {
   .hover-image {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
     position: absolute;
     z-index: 1;
   }
@@ -97,6 +97,39 @@ const {
     }
   }
 </style>
+
+<svg style="position: absolute; width: 0; height: 0;">
+  <defs>
+    <filter id="brush-edge">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.08"
+        numOctaves="4"
+        result="noise"
+        seed="5"></feTurbulence>
+      <feDisplacementMap
+        in="SourceGraphic"
+        in2="noise"
+        scale="4"
+        xChannelSelector="R"
+        yChannelSelector="G"
+        result="displaced"></feDisplacementMap>
+      <feGaussianBlur in="displaced" stdDeviation="1"></feGaussianBlur>
+    </filter>
+
+    <mask id="brush-mask">
+      <rect
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        rx="8"
+        ry="8"
+        fill="white"
+        filter="url(#brush-edge)"></rect>
+    </mask>
+  </defs>
+</svg>
 
 <a class="card" href={link} target="_blank">
   <div class="image-wrapper">
