@@ -5,9 +5,10 @@ interface Props {
   image: ImageMetadata;
   alt: string;
   link: string;
+  class?: string;
 }
 
-const { image, alt, link } = Astro.props;
+const { image, alt, link, class: className } = Astro.props;
 
 // Create a simple rotation based on alt text for variety
 const rotations = { GitHub: 2, Youtube: -1, LinkedIn: 1.5 };
@@ -62,7 +63,7 @@ const rotation = rotations[alt as keyof typeof rotations] || 0;
   </filter>
 </svg>
 
-<a href={link} target="_blank" class="link-wrapper">
+<a href={link} target="_blank" class={`link-wrapper ${className || ""}`}>
   <div class="style">
     <Image src={image} alt={alt} width={28} height={28} />
   </div>

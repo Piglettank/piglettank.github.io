@@ -43,7 +43,6 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
 
     #title {
       cursor: pointer;
-      user-select: none;
       display: inline-block;
       transition: all 0.3s ease;
     }
@@ -91,6 +90,24 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
     .social-media-links {
       display: flex;
       gap: 16px;
+    }
+
+    :global(.social-link-1) {
+      opacity: 0;
+      animation: fadeInUp 0.5s ease-out forwards;
+      animation-delay: 0.55s;
+    }
+
+    :global(.social-link-2) {
+      opacity: 0;
+      animation: fadeInUp 0.5s ease-out forwards;
+      animation-delay: 0.65s;
+    }
+
+    :global(.social-link-3) {
+      opacity: 0;
+      animation: fadeInUp 0.5s ease-out forwards;
+      animation-delay: 0.75s;
     }
 
     @media screen and (max-width: 760px) {
@@ -141,16 +158,19 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
       </p>
       <div class="social-media-links">
         <SocialMediaLink
+          class="social-link-1"
           image={github_white}
           alt="GitHub"
           link="https://github.com/piglettank"
         />
         <SocialMediaLink
+          class="social-link-2"
           image={youtube_white}
           alt="Youtube"
           link="https://www.youtube.com/user/Piglettank"
         />
         <SocialMediaLink
+          class="social-link-3"
           image={linkedin_white}
           alt="LinkedIn"
           link="https://www.linkedin.com/in/johan-fallberg/"
@@ -259,4 +279,28 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
       }
     });
   }
+
+  // Remove social link classes after animation finishes
+  const socialLink1 = document.querySelector(".social-link-1");
+  const socialLink2 = document.querySelector(".social-link-2");
+  const socialLink3 = document.querySelector(".social-link-3");
+
+  const removeClassOnAnimationEnd = (
+    element: Element | null,
+    className: string,
+  ) => {
+    if (element) {
+      element.addEventListener(
+        "animationend",
+        () => {
+          element.classList.remove(className);
+        },
+        { once: true },
+      );
+    }
+  };
+
+  removeClassOnAnimationEnd(socialLink1, "social-link-1");
+  removeClassOnAnimationEnd(socialLink2, "social-link-2");
+  removeClassOnAnimationEnd(socialLink3, "social-link-3");
 </script>
