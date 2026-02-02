@@ -56,6 +56,31 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
     #title:active {
       transform: scale(0.98);
     }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #title.animating {
+      animation: fadeInUp 0.7s ease-out forwards;
+    }
+
+    #subtitle {
+      opacity: 0;
+    }
+
+    #subtitle.animating {
+      animation: fadeInUp 0.5s ease-out forwards;
+      animation-delay: 0.25s;
+    }
+
     .hero-image {
       width: 400px;
       height: 400px;
@@ -111,7 +136,9 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
       >
         &nbsp;
       </h1>
-      <p style="margin-top: 8px;">Welcome my website. Enjoy your stay!</p>
+      <p id="subtitle" class="animating" style="margin-top: 8px;">
+        Welcome my website. Enjoy your stay!
+      </p>
       <div class="social-media-links">
         <SocialMediaLink
           image={github_white}
@@ -199,14 +226,26 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
   const title = document.getElementById("title");
 
   if (title) {
-    // Set initial greeting
+    // Function to animate greeting
+    const animateGreeting = () => {
+      // Remove animation class to reset
+      title.classList.remove("animating");
+      // Force reflow to restart animation
+      void title.offsetWidth;
+      // Add animation class
+      title.classList.add("animating");
+    };
+
+    // Set initial greeting and animate
     title.textContent = greetings[currentIndex];
+    animateGreeting();
 
     // Function to cycle greeting
     const cycleGreeting = () => {
       // Cycle to next greeting
       currentIndex = (currentIndex + 1) % greetings.length;
       title.textContent = greetings[currentIndex];
+      animateGreeting();
     };
 
     // Add click event listener
