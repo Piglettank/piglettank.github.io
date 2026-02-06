@@ -16,13 +16,12 @@ import pokemon_logo from "../assets/pokemon_chart.png";
 import pokemon_gif from "../assets/pokemon_chart_gif.gif";
 import github_white from "../assets/github_white.png";
 import youtube_white from "../assets/youtube_white.png";
-import linkedin_white from "../assets/linkedin_white.png";
+import mal_white from "../assets/mal_white.png";
 import SocialMediaLink from "../components/SocialMediaLink.astro";
-import ExperienceSection from "../components/sections/ExperienceSection.astro";
 ---
 
 <Layout>
-  <style define:vars="{{ bcgImage }}">
+  <style>
     .hero-section {
       display: flex;
       height: 80svh;
@@ -44,7 +43,7 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
     #title {
       cursor: pointer;
       display: inline-block;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease-out;
     }
 
     #title:hover {
@@ -151,7 +150,7 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
         tabindex="0"
         aria-label="Click to cycle through greetings in different languages"
       >
-        &nbsp;
+        &nbsp; <!-- Empty character to avoid jitter -->
       </h1>
       <p id="subtitle" class="animating" style="margin-top: 8px;">
         Welcome my website. Enjoy your stay!
@@ -171,9 +170,9 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
         />
         <SocialMediaLink
           class="social-link-3"
-          image={linkedin_white}
-          alt="LinkedIn"
-          link="https://www.linkedin.com/in/johan-fallberg/"
+          image={mal_white}
+          alt="MyAnimeList"
+          link="https://myanimelist.net/mangalist/Piglettank"
         />
       </div>
     </div>
@@ -224,9 +223,6 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
     tags={["Flutter"]}
   />
   <div style="height: 800px;"></div>
-
-  <!-- <ExperienceSection />
-  <div style="height: 320px;"></div> -->
 </Layout>
 
 <script>
@@ -279,28 +275,4 @@ import ExperienceSection from "../components/sections/ExperienceSection.astro";
       }
     });
   }
-
-  // Remove social link classes after animation finishes
-  const socialLink1 = document.querySelector(".social-link-1");
-  const socialLink2 = document.querySelector(".social-link-2");
-  const socialLink3 = document.querySelector(".social-link-3");
-
-  const removeClassOnAnimationEnd = (
-    element: Element | null,
-    className: string,
-  ) => {
-    if (element) {
-      element.addEventListener(
-        "animationend",
-        () => {
-          element.classList.remove(className);
-        },
-        { once: true },
-      );
-    }
-  };
-
-  removeClassOnAnimationEnd(socialLink1, "social-link-1");
-  removeClassOnAnimationEnd(socialLink2, "social-link-2");
-  removeClassOnAnimationEnd(socialLink3, "social-link-3");
 </script>

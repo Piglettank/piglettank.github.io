@@ -10,9 +10,8 @@ interface Props {
 
 const { image, alt, link, class: className } = Astro.props;
 
-// Create a simple rotation based on alt text for variety
-const rotations = { GitHub: 2, Youtube: -1, LinkedIn: 1.5 };
-const rotation = rotations[alt as keyof typeof rotations] || 0;
+const r = Math.floor(Math.random() * 10);
+const rotation = r;
 ---
 
 <style define:vars={{ rotation: `${rotation}deg` }}>
@@ -36,7 +35,7 @@ const rotation = rotations[alt as keyof typeof rotations] || 0;
   }
 
   .link-wrapper:hover {
-    transform: rotate(-3deg) scale(1.1);
+    transform: rotate(-3deg) scale(1.15);
   }
 
   .link-wrapper:hover .style {
@@ -63,8 +62,10 @@ const rotation = rotations[alt as keyof typeof rotations] || 0;
   </filter>
 </svg>
 
-<a href={link} target="_blank" class={`link-wrapper ${className || ""}`}>
-  <div class="style">
-    <Image src={image} alt={alt} width={28} height={28} />
-  </div>
-</a>
+<div class={`${className || ""}`}>
+  <a href={link} target="_blank" class={`link-wrapper`}>
+    <div class="style">
+      <Image src={image} alt={alt} width={28} height={28} />
+    </div>
+  </a>
+</div>
