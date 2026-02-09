@@ -258,7 +258,6 @@ import SocialMediaLink from "../components/SocialMediaLink.astro";
 
     // Function to cycle greeting
     const cycleGreeting = () => {
-      // Cycle to next greeting
       currentIndex = (currentIndex + 1) % greetings.length;
       title.textContent = greetings[currentIndex];
       animateGreeting();
