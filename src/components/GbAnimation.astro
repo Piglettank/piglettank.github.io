@@ -1,0 +1,38 @@
+---
+import GbAnimationReact from "./GbAnimation";
+
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<style is:inline>
+  .gb-char {
+    opacity: 1;
+    display: inline-block;
+    transform: 0;
+    animation: orbit ease-out forwards 1s;
+  }
+
+  @keyframes translateX {
+    from {
+      transform: translateX(-50px) translateY(-50px);
+    }
+    to {
+      transform: translateX(50px) translateY(50px);
+    }
+  }
+  @-webkit-keyframes orbit {
+    from {
+      -webkit-transform: scale(1.8) rotate(0deg) translateX(10px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: scale(1) rotate(360deg) translateX(10px)
+        rotate(-360deg);
+    }
+  }
+</style>
+
+<GbAnimationReact client:load text={text} />
