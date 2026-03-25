@@ -6,24 +6,35 @@ type Props = {
 
 export default function GbAnimation({ text }: Props) {
   const letters = text.split("");
-  const spans = letters.map((letter, index) => (
+
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  let visibleLetters = letters.slice(0, visibleCount);
+  let invisibleLetters = letters.slice(visibleCount);
+  const spansVisible = visibleLetters.map((letter, index) => (
     <span className="gb-char" key={`${index}`}>
       {letter === " " ? "\u00A0" : letter}
     </span>
   ));
-
-  const [visibleCount, setVisibleCount] = useState(0);
+  const spansInvisible = invisibleLetters.map((letter, index) => (
+    <span className="gb-char-invisible" key={`${index}`}>
+      {letter === " " ? "\u00A0" : letter}
+    </span>
+  ));
 
   useEffect(() => {
-    if (visibleCount < spans.length) {
+    if (invisibleLetters.length > 0) {
       const timer = setTimeout(() => {
         setVisibleCount((count) => count + 1);
-      }, 100);
+      }, 70);
       return () => clearTimeout(timer);
     }
-  }, [visibleCount, spans.length]);
+  }, [visibleCount, letters.length]);
 
-  const visibleSpans = spans.slice(0, visibleCount);
-
-  return <div className="gb-animation">{visibleSpans}</div>;
+  return (
+    <div className="gb-animation">
+      {spansVisible}
+      {spansInvisible}
+    </div>
+  );
 }

@@ -1,4 +1,128 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-zh5pqy2k> <head><title>Pig home</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell Sans"><link rel="stylesheet" href="/astro/index.CeHjEeqR.css"></head> <!-- <body style={`background-backgroundImage: url(${backgroundUrl})  `}> --> <body data-astro-cid-zh5pqy2k> <!-- <header> --> <!-- <Header title="HOME" link="/" />
+<!DOCTYPE html><html lang="en" data-astro-cid-zh5pqy2k> <head><title>Pig home</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="stylesheet" href="/astro/index.CM0g_XIw.css"></head> <!-- <body style={`background-backgroundImage: url(${backgroundUrl})  `}> --> <body data-astro-cid-zh5pqy2k> <style>
+  .intro-screen {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--charcoal);
+    z-index: 10;
+  }
+
+  .continue-container {
+    animation: reveal ease-in-out alternate infinite 1s 2s;
+    opacity: 0;
+    text-align: center;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style><div class="intro-screen"> <div class="gb-animation-container"> <style>
+  .gb-animation-container {
+    letter-spacing: 3px;
+    font-size: 64px;
+    font-family: "GBAFont";
+    text-align: center;
+  }
+  @media screen and (max-width: 768px) {
+    .gb-animation-container {
+      letter-spacing: 3px;
+      font-size: 48px;
+      font-family: "GBAFont";
+    }
+  }
+
+  .gb-char {
+    opacity: 1;
+    /* background: -webkit-linear-gradient(#eee, #333); */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+
+    animation:
+      orbit ease-out forwards 1.1s,
+      colorChange ease-out forwards 1.1s,
+      glow ease-out forwards 0.4s 1.7s;
+    display: inline-block;
+  }
+
+  .gb-char-invisible {
+    opacity: 0;
+  }
+
+  @keyframes glow {
+    from {
+      color: var(--glow);
+    }
+    50% {
+      color: var(--myWhite);
+    }
+    to {
+      color: var(--glow);
+    }
+  }
+
+  @keyframes colorChange {
+    from {
+      color: var(--charcoal);
+    }
+    to {
+      color: var(--glow);
+    }
+  }
+  @-webkit-keyframes orbit {
+    from {
+      -webkit-transform: scale(3.4) rotate(-360deg) translateX(-45px)
+        translateY(30px) rotate(360deg);
+    }
+    75% {
+      -webkit-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px)
+        rotate(0deg);
+    }
+    76% {
+      -webkit-transform: translateY(0px);
+    }
+    84% {
+      -webkit-transform: translateY(-9px);
+    }
+    92% {
+      -webkit-transform: translateY(0px);
+    }
+    94% {
+      -webkit-transform: translateY(-3px);
+    }
+    96% {
+      -webkit-transform: translateY(0px);
+    }
+    to {
+      -webkit-transform: translateY(0px);
+    }
+  }
+</style><div class="gb-animation-container"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZfKW2K" prefix="r1" component-url="/astro/GbAnimation.BnL3MHEu.js" component-export="default" renderer-url="/astro/client.-Rv19YPA.js" props="{&quot;text&quot;:[0,&quot;Piglettank&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;GbAnimationReact&quot;,&quot;value&quot;:true}" await-children><div class="gb-animation"><span class="gb-char-invisible">P</span><span class="gb-char-invisible">i</span><span class="gb-char-invisible">g</span><span class="gb-char-invisible">l</span><span class="gb-char-invisible">e</span><span class="gb-char-invisible">t</span><span class="gb-char-invisible">t</span><span class="gb-char-invisible">a</span><span class="gb-char-invisible">n</span><span class="gb-char-invisible">k</span></div><!--astro:end--></astro-island> </div> </div> <div class="continue-container"> <p>- Press any button to continue -</p> </div> <!--center and lift baby --> <div style="height: 20px;"></div> </div> <script>
+  // Hide the intro screen on any button press or mouse click
+  function hideIntroScreen() {
+    const introScreen = document.querySelector(".intro-screen");
+    if (introScreen) {
+      introScreen.style.display = "none";
+      window.removeEventListener("keydown", hideIntroScreen);
+      window.removeEventListener("mousedown", hideIntroScreen);
+      window.removeEventListener("touchstart", hideIntroScreen);
+    }
+  }
+
+  window.addEventListener("keydown", hideIntroScreen);
+  window.addEventListener("mousedown", hideIntroScreen);
+  window.addEventListener("touchstart", hideIntroScreen);
+</script> <!-- <header> --> <!-- <Header title="HOME" link="/" />
       <Header title="GAMES" link="#games" /> --> <!-- <Header title="RED BLOG" link="/red-blog/" /> --> <!-- <Header title="EXPERIMENT" link="/experiment/" /> --> <!-- </header> --> <!-- <div class="top">
       <Image class={"backgroundImage"} src={background} alt={"backgruond"} />
       <Image class={"namestamp"} src={name} alt={"backgruond"} />
@@ -8,7 +132,7 @@
 Today is
 <span id="date" onclick="cycleDate()" role="button" tabindex="0" aria-label="Click to cycle through dates in different calendars" data-astro-cid-nlow4r3u></span>
 , it's a good day to be alive.
-</p> <div class="social-media-links" data-astro-cid-nlow4r3u> <svg style="position: absolute; width: 0; height: 0;; --rotation: 0deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 0deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 0deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 0deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-1" data-astro-cid-qyydjdmb style="--rotation: 0deg;"> <a href="https://github.com/piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 0deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 0deg;"> <img src="/astro/github_white.rShMhe___2tFNPQ.webp" alt="GitHub" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> <svg style="position: absolute; width: 0; height: 0;; --rotation: 5deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 5deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 5deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-2" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <a href="https://www.youtube.com/user/Piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <img src="/astro/youtube_white.BkqWtnvZ_1ymVyJ.webp" alt="Youtube" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> <svg style="position: absolute; width: 0; height: 0;; --rotation: 6deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 6deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 6deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 6deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-3" data-astro-cid-qyydjdmb style="--rotation: 6deg;"> <a href="https://myanimelist.net/mangalist/Piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 6deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 6deg;"> <img src="/astro/mal_white.BSmDGYL9_ZJhUzr.webp" alt="MyAnimeList" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> </div> </div> </div>  <script>
+</p> <div class="social-media-links" data-astro-cid-nlow4r3u> <svg style="position: absolute; width: 0; height: 0;; --rotation: 3deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 3deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 3deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 3deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-1" data-astro-cid-qyydjdmb style="--rotation: 3deg;"> <a href="https://github.com/piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 3deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 3deg;"> <img src="/astro/github_white.rShMhe___2tFNPQ.webp" alt="GitHub" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> <svg style="position: absolute; width: 0; height: 0;; --rotation: 2deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 2deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 2deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 2deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-2" data-astro-cid-qyydjdmb style="--rotation: 2deg;"> <a href="https://www.youtube.com/user/Piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 2deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 2deg;"> <img src="/astro/youtube_white.BkqWtnvZ_1ymVyJ.webp" alt="Youtube" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> <svg style="position: absolute; width: 0; height: 0;; --rotation: 6deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 6deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 6deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 6deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-3" data-astro-cid-qyydjdmb style="--rotation: 6deg;"> <a href="https://myanimelist.net/mangalist/Piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 6deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 6deg;"> <img src="/astro/mal_white.BSmDGYL9_ZJhUzr.webp" alt="MyAnimeList" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> </div> </div> </div>  <script>
   const greetings = [
     "Ça va",
     "¡Buenas!",
