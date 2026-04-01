@@ -51,11 +51,15 @@ import GbAnimation from "./GbAnimation.astro";
   // Hide the intro screen on any button press or mouse click
   function hideIntroScreen() {
     const introScreen = document.querySelector(".intro-screen");
+    const mainContent = document.querySelector(".child");
     if (introScreen) {
       introScreen.style.display = "none";
       window.removeEventListener("keydown", hideIntroScreen);
       window.removeEventListener("mousedown", hideIntroScreen);
       window.removeEventListener("touchstart", hideIntroScreen);
+      if (mainContent) {
+        mainContent.style.display = "block";
+      }
     }
   }
 

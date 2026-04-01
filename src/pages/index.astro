@@ -15,6 +15,7 @@ import pokemon_logo from "../assets/pokemon_chart.png";
 import pokemon_gif from "../assets/pokemon_chart_gif.gif";
 import GbAnimation from "../components/GbAnimation.astro";
 import IntroScreen from "../components/IntroScreen.astro";
+import GallerySection from "../components/GallerySection.astro";
 ---
 
 <Layout>
@@ -64,5 +65,14 @@ import IntroScreen from "../components/IntroScreen.astro";
     hoverImageAlt="Pokémon Type Chart preview"
     tags={["Flutter"]}
   />
+  <div style="height: 80px;"></div>
+
+  <SectionHeader
+    image={tools_header}
+    hoverImage={tools_header_hover}
+    title="Gallery"
+    ref="gallery"
+  />
+  <GallerySection />
   <div style="height: 800px;"></div>
 </Layout>
