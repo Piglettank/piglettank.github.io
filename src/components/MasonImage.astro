@@ -1,0 +1,48 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  aspectRatio: number;
+  href?: string;
+}
+
+const { src, alt, aspectRatio, href } = Astro.props;
+---
+
+<style define:vars={{ aspectRatio }}>
+  .mason-image {
+    flex-shrink: 1;
+    border: 3px solid transparent;
+    flex-grow: calc(var(--aspectRatio) * 100);
+    --flex-cross-basis: 180px; /* max height before break */
+    flex-basis: calc(var(--aspectRatio) * var(--flex-cross-basis));
+    border-radius: 4px;
+    aspect-ratio: var(--aspectRatio);
+    transition: all 0.3s ease;
+  }
+  .mason-image:hover {
+    border: 3px solid var(--glow);
+    border-radius: 5px;
+    opacity: 0.95;
+    transform: scale(1.03) rotate(1deg);
+  }
+
+  .mason-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--aspectRatio);
+    border-radius: 3px;
+  }
+  @media screen and (max-width: 600px) {
+    .mason-image {
+      --flex-cross-basis: 110px;
+    }
+  }
+</style>
+
+<div class="mason-image">
+  <a href={href ? href : src} target="_blank">
+    <img src={src} alt={alt} loading="lazy" />
+  </a>
+</div>

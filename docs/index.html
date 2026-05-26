@@ -1,11 +1,231 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-zh5pqy2k> <head><title>Pig home</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell Sans"><style>:root{--glow: #ffb875;--charcoal: #181316;--rose: #f5a896;--gentleOutline: #f5a89666;--myWhite: #ffebd2;--hoverOverlay: rgba(255, 255, 255, .054)}h1,h2,h3,h4,h5,h6{font-family:Shantell Sans,cursive,sans-serif}h1{font-size:36px}h2{font-size:26px}h3{font-size:22px}h4{font-size:18px}h5{font-size:14px}h6{font-size:12px}p{line-height:150%;font-family:Shantell Sans,cursive,sans-serif}ul{padding-left:16px}li{margin:0;padding-bottom:8px;line-height:150%;font-family:Shantell Sans,cursive,sans-serif}body{background-color:var(--charcoal);color:var(--myWhite)}.child[data-astro-cid-zh5pqy2k]{margin:auto;padding-left:20px;padding-right:20px;max-width:920px;background-size:cover}.top[data-astro-cid-zh5pqy2k]{display:flex;height:100svh;align-items:center;align-self:center;justify-content:center;background-size:auto;background-repeat:no-repeat;gap:40px;width:100%}.backgroundImage[data-astro-cid-zh5pqy2k]{position:absolute;height:100%;width:100%}.namestamp[data-astro-cid-zh5pqy2k]{position:absolute;right:10%;height:100%;width:auto}.me[data-astro-cid-zh5pqy2k]{position:absolute;left:20%;height:auto;width:30%}header[data-astro-cid-zh5pqy2k]{display:flex;align-items:center;justify-content:end;margin:30px}a[data-astro-cid-zh5pqy2k]:link{color:var(--glow)}a[data-astro-cid-zh5pqy2k]:visited{color:var(--rose)}@media screen and (max-width: 600px){header[data-astro-cid-zh5pqy2k]{display:none;margin:0}.child[data-astro-cid-zh5pqy2k]{padding-left:12px;padding-right:12px}}
-</style>
-<link rel="stylesheet" href="/astro/index.B2RY4SYL.css"></head> <!-- <body style={`background-backgroundImage: url(${backgroundUrl})  `}> --> <body data-astro-cid-zh5pqy2k> <!-- <header> --> <!-- <Header title="HOME" link="/" />
+<!DOCTYPE html><html lang="en" class="intro-pending" data-astro-cid-zh5pqy2k> <head><title>Pig home</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="stylesheet" href="/astro/index.CXemwMrn.css"></head> <!-- <body style={`background-backgroundImage: url(${backgroundUrl})  `}> --> <body data-astro-cid-zh5pqy2k> <style>
+  .intro-screen {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--charcoal);
+    z-index: 10;
+  }
+
+  .continue-container {
+    animation: reveal ease-in-out alternate infinite 1s 2s;
+    opacity: 0;
+    text-align: center;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style><div class="intro-screen"> <div class="gb-animation-container"> <style>
+  .gb-animation-container {
+    letter-spacing: 3px;
+    font-size: 64px;
+    font-family: "GBAFont";
+    text-align: center;
+  }
+  @media screen and (max-width: 768px) {
+    .gb-animation-container {
+      letter-spacing: 3px;
+      font-size: 48px;
+      font-family: "GBAFont";
+    }
+  }
+
+  .gb-char {
+    opacity: 1;
+    /* background: -webkit-linear-gradient(#eee, #333); */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+
+    animation:
+      orbit ease-out forwards 1.1s,
+      colorChange ease-out forwards 1.1s,
+      glow ease-out forwards 0.4s 1.7s;
+    display: inline-block;
+  }
+
+  .gb-char-invisible {
+    opacity: 0;
+  }
+
+  @keyframes glow {
+    from {
+      color: var(--glow);
+    }
+    50% {
+      color: var(--myWhite);
+    }
+    to {
+      color: var(--glow);
+    }
+  }
+
+  @keyframes colorChange {
+    from {
+      color: var(--charcoal);
+    }
+    to {
+      color: var(--glow);
+    }
+  }
+  @-webkit-keyframes orbit {
+    from {
+      -webkit-transform: scale(3.4) rotate(-360deg) translateX(-45px)
+        translateY(30px) rotate(360deg);
+    }
+    75% {
+      -webkit-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px)
+        rotate(0deg);
+    }
+    76% {
+      -webkit-transform: translateY(0px);
+    }
+    84% {
+      -webkit-transform: translateY(-9px);
+    }
+    92% {
+      -webkit-transform: translateY(0px);
+    }
+    94% {
+      -webkit-transform: translateY(-3px);
+    }
+    96% {
+      -webkit-transform: translateY(0px);
+    }
+    to {
+      -webkit-transform: translateY(0px);
+    }
+  }
+</style><div class="gb-animation-container"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZfKW2K" prefix="r1" component-url="/astro/GbAnimation.BnL3MHEu.js" component-export="default" renderer-url="/astro/client.-Rv19YPA.js" props="{&quot;text&quot;:[0,&quot;Piglettank&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;GbAnimationReact&quot;,&quot;value&quot;:true}" await-children><div class="gb-animation"><span class="gb-char-invisible">P</span><span class="gb-char-invisible">i</span><span class="gb-char-invisible">g</span><span class="gb-char-invisible">l</span><span class="gb-char-invisible">e</span><span class="gb-char-invisible">t</span><span class="gb-char-invisible">t</span><span class="gb-char-invisible">a</span><span class="gb-char-invisible">n</span><span class="gb-char-invisible">k</span></div><!--astro:end--></astro-island> </div> </div> <div class="continue-container"> <p>- Press any button to continue -</p> </div> <!--center and lift baby --> <div style="height: 20px;"></div> </div> <script>
+  // Hide the intro screen on any button press or mouse click
+  function hideIntroScreen() {
+    const introScreen = document.querySelector(".intro-screen");
+    const mainContent = document.querySelector(".child");
+    if (introScreen) {
+      introScreen.style.display = "none";
+      window.removeEventListener("keydown", hideIntroScreen);
+      window.removeEventListener("mousedown", hideIntroScreen);
+      window.removeEventListener("touchstart", hideIntroScreen);
+      if (mainContent) {
+        mainContent.style.display = "block";
+      }
+    }
+  }
+
+  window.addEventListener("keydown", hideIntroScreen);
+  window.addEventListener("mousedown", hideIntroScreen);
+  window.addEventListener("touchstart", hideIntroScreen);
+</script> <!-- <header> --> <!-- <Header title="HOME" link="/" />
       <Header title="GAMES" link="#games" /> --> <!-- <Header title="RED BLOG" link="/red-blog/" /> --> <!-- <Header title="EXPERIMENT" link="/experiment/" /> --> <!-- </header> --> <!-- <div class="top">
       <Image class={"backgroundImage"} src={background} alt={"backgruond"} />
       <Image class={"namestamp"} src={name} alt={"backgruond"} />
       <Image class={"me"} src={me} alt={"backgruond"} />
-    </div> --> <div class="child" data-astro-cid-zh5pqy2k>   <div class="hero-section" data-astro-cid-j7pv25f6> <img src="/astro/pig.DL4cqEiA_Z2s6nnO.webp" alt="Me about to smash" data-astro-cid-j7pv25f6="true" width="1024" height="1024" loading="lazy" decoding="async" class="hero-image"> <div class="text" data-astro-cid-j7pv25f6> <h1 id="title" style="margin-bottom: 0px;" role="button" tabindex="0" aria-label="Click to cycle through greetings in different languages" data-astro-cid-j7pv25f6>
-&nbsp; <!-- Empty character to avoid jitter --> </h1> <p id="subtitle" class="animating" style="margin-top: 8px;" data-astro-cid-j7pv25f6>
-Welcome to my website. Enjoy your stay!
-</p> <div class="social-media-links" data-astro-cid-j7pv25f6> <svg style="position: absolute; width: 0; height: 0;; --rotation: 5deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 5deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 5deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-1" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <a href="https://github.com/piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <img src="/astro/github_white.rShMhe___2tFNPQ.webp" alt="GitHub" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> <svg style="position: absolute; width: 0; height: 0;; --rotation: 0deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 0deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 0deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 0deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-2" data-astro-cid-qyydjdmb style="--rotation: 0deg;"> <a href="https://www.youtube.com/user/Piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 0deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 0deg;"> <img src="/astro/youtube_white.BkqWtnvZ_1ymVyJ.webp" alt="Youtube" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> <svg style="position: absolute; width: 0; height: 0;; --rotation: 5deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 5deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 5deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-3" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <a href="https://myanimelist.net/mangalist/Piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <img src="/astro/mal_white.BSmDGYL9_ZJhUzr.webp" alt="MyAnimeList" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> </div> </div> </div> <a class="block" href="#games" name="games" data-astro-cid-wk2votdk> <div class="imageWrapper" data-astro-cid-wk2votdk> <img src="/astro/games.DHh6QMaW_1pkHip.webp" alt="Games picture" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image"> <img src="/astro/games_hover.IQkKWqSO_2bNRL9.webp" alt="Games hovered" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image-hover"> </div> <h2 style="margin-left: 4px;" data-astro-cid-wk2votdk>Games</h2> </a> <svg style="position: absolute; width: 0; height: 0;" data-astro-cid-dohjnao5> <defs data-astro-cid-dohjnao5> <filter id="brush-edge" data-astro-cid-dohjnao5> <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="4" result="noise" seed="5" data-astro-cid-dohjnao5></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced" data-astro-cid-dohjnao5></feDisplacementMap> <feGaussianBlur in="displaced" stdDeviation="1" data-astro-cid-dohjnao5></feGaussianBlur> </filter> <mask id="brush-mask" data-astro-cid-dohjnao5> <rect x="0" y="0" width="100" height="100" rx="8" ry="8" fill="white" filter="url(#brush-edge)" data-astro-cid-dohjnao5></rect> </mask> </defs> </svg> <a class="card" href="https://flubbermonkeys.itch.io/game" target="_blank" data-astro-cid-dohjnao5> <div class="image-wrapper" data-astro-cid-dohjnao5> <img src="/astro/flubbermonkeys_logo.BCEchbig_1999JN.webp" alt="Flubbermonkeys" data-astro-cid-dohjnao5="true" width="512" height="512" loading="lazy" decoding="async" class="image"> <img src="/astro/flubbermonkeys_gif.BZUU8MjS_ZPJDxE.webp" alt="Flubbermonkeys Game Preview" data-astro-cid-dohjnao5="true" width="360" height="320" loading="lazy" decoding="async" class="hover-image"> </div> <div style="width: 16px;" data-astro-cid-dohjnao5></div> <div class="text-wrapper" data-astro-cid-dohjnao5> <h3 style="margin: 0;" data-astro-cid-dohjnao5>Flubbermonkeys</h3> <p style="margin-top: 2px; margin-bottom: 0;" data-astro-cid-dohjnao5> Cute adventure game for two players. Available on Itch. </p> <div class="tag-wrapper" data-astro-cid-dohjnao5> <div class="tag" data-astro-cid-dohjnao5>Unity</div> </div> </div> </a> <svg style="position: absolute; width: 0; height: 0;" data-astro-cid-dohjnao5> <defs data-astro-cid-dohjnao5> <filter id="brush-edge" data-astro-cid-dohjnao5> <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="4" result="noise" seed="5" data-astro-cid-dohjnao5></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced" data-astro-cid-dohjnao5></feDisplacementMap> <feGaussianBlur in="displaced" stdDeviation="1" data-astro-cid-dohjnao5></feGaussianBlur> </filter> <mask id="brush-mask" data-astro-cid-dohjnao5> <rect x="0" y="0" width="100" height="100" rx="8" ry="8" fill="white" filter="url(#brush-edge)" data-astro-cid-dohjnao5></rect> </mask> </defs> </svg> <a class="card" href="https://frilans-flame.netlify.app" target="_blank" data-astro-cid-dohjnao5> <div class="image-wrapper" data-astro-cid-dohjnao5> <img src="/astro/ff_logo.BqkyXI7r_uXPVn.webp" alt="Frilans Flame Logo" data-astro-cid-dohjnao5="true" width="225" height="225" loading="lazy" decoding="async" class="image"> <img src="/astro/ff_game_gif.D7AIzaTx_21qxTi.webp" alt="Frilans Flame Game Preview" data-astro-cid-dohjnao5="true" width="256" height="256" loading="lazy" decoding="async" class="hover-image"> </div> <div style="width: 16px;" data-astro-cid-dohjnao5></div> <div class="text-wrapper" data-astro-cid-dohjnao5> <h3 style="margin: 0;" data-astro-cid-dohjnao5>Frilans Flame</h3> <p style="margin-top: 2px; margin-bottom: 0;" data-astro-cid-dohjnao5> Endless 2D runner with Frilans Finans theme. Hosted on Netlify. </p> <div class="tag-wrapper" data-astro-cid-dohjnao5> <div class="tag" data-astro-cid-dohjnao5>Flutter</div><div class="tag" data-astro-cid-dohjnao5>Flame</div> </div> </div> </a> <div style="height: 80px;" data-astro-cid-j7pv25f6></div> <a class="block" href="#tools" name="tools" data-astro-cid-wk2votdk> <div class="imageWrapper" data-astro-cid-wk2votdk> <img src="/astro/tools.BrDqLaGs_Z20I1Ad.webp" alt="Tools picture" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image"> <img src="/astro/tools.BrDqLaGs_Z20I1Ad.webp" alt="Tools hovered" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image-hover"> </div> <h2 style="margin-left: 4px;" data-astro-cid-wk2votdk>Tools</h2> </a> <svg style="position: absolute; width: 0; height: 0;" data-astro-cid-dohjnao5> <defs data-astro-cid-dohjnao5> <filter id="brush-edge" data-astro-cid-dohjnao5> <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="4" result="noise" seed="5" data-astro-cid-dohjnao5></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced" data-astro-cid-dohjnao5></feDisplacementMap> <feGaussianBlur in="displaced" stdDeviation="1" data-astro-cid-dohjnao5></feGaussianBlur> </filter> <mask id="brush-mask" data-astro-cid-dohjnao5> <rect x="0" y="0" width="100" height="100" rx="8" ry="8" fill="white" filter="url(#brush-edge)" data-astro-cid-dohjnao5></rect> </mask> </defs> </svg> <a class="card" href="https://pokemon-chart.netlify.app/" target="_blank" data-astro-cid-dohjnao5> <div class="image-wrapper" data-astro-cid-dohjnao5> <img src="/astro/pokemon_chart.CaE7BTNG_Z2nmelm.webp" alt="Pokémon Type Chart screenshot" data-astro-cid-dohjnao5="true" width="1824" height="1826" loading="lazy" decoding="async" class="image"> <img src="/astro/pokemon_chart_gif.CjVoM_vN_2r1Vg9.webp" alt="Pokémon Type Chart preview" data-astro-cid-dohjnao5="true" width="400" height="400" loading="lazy" decoding="async" class="hover-image"> </div> <div style="width: 16px;" data-astro-cid-dohjnao5></div> <div class="text-wrapper" data-astro-cid-dohjnao5> <h3 style="margin: 0;" data-astro-cid-dohjnao5>Pokémon Type Chart</h3> <p style="margin-top: 2px; margin-bottom: 0;" data-astro-cid-dohjnao5> Interactive Pokémon type chart. Hosted on Netlify. </p> <div class="tag-wrapper" data-astro-cid-dohjnao5> <div class="tag" data-astro-cid-dohjnao5>Flutter</div> </div> </div> </a> <div style="height: 800px;" data-astro-cid-j7pv25f6></div>  </div> </body></html> <script type="module">const n=["Ça va","¡Buenas!","Shalom","おっす！","Tjenixen!","Howdy!","Moin moin","Привіт"];let e=Math.floor(Math.random()*n.length);const t=document.getElementById("title");if(t){const a=()=>{t.classList.remove("animating"),t.offsetWidth,t.classList.add("animating")};t.textContent=n[e],a();const o=()=>{e=(e+1)%n.length,t.textContent=n[e],a()};t.addEventListener("click",o),t.addEventListener("keydown",i=>{(i.key==="Enter"||i.key===" ")&&(i.preventDefault(),o())})}</script>
+    </div> --> <div class="child" data-astro-cid-zh5pqy2k>  <div class="hero-section" data-astro-cid-nlow4r3u> <img src="/astro/pig.DL4cqEiA_Z2s6nnO.webp" alt="Me about to smash" loading="eager" data-astro-cid-nlow4r3u="true" width="1024" height="1024" decoding="async" class="hero-image"> <div class="text" data-astro-cid-nlow4r3u> <h1 id="title" style="margin-bottom: 0px;" role="button" tabindex="0" aria-label="Click to cycle through greetings in different languages" onclick="cycleGreeting()" data-astro-cid-nlow4r3u>
+&nbsp; <!-- Empty character to avoid jitter --> </h1> <p id="subtitle" class="animating" style="margin-top: 8px;" data-astro-cid-nlow4r3u>
+Today is
+<span id="date" onclick="cycleDate()" role="button" tabindex="0" aria-label="Click to cycle through dates in different calendars" data-astro-cid-nlow4r3u></span>
+, it's a good day to be alive.
+</p> <div class="social-media-links" data-astro-cid-nlow4r3u> <svg style="position: absolute; width: 0; height: 0;; --rotation: 4deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 4deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 4deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 4deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-1" data-astro-cid-qyydjdmb style="--rotation: 4deg;"> <a href="https://github.com/piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 4deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 4deg;"> <img src="/astro/github_white.rShMhe___2tFNPQ.webp" alt="GitHub" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> <svg style="position: absolute; width: 0; height: 0;; --rotation: 5deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 5deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 5deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-2" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <a href="https://www.youtube.com/user/Piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 5deg;"> <img src="/astro/youtube_white.BkqWtnvZ_1ymVyJ.webp" alt="Youtube" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> <svg style="position: absolute; width: 0; height: 0;; --rotation: 2deg;" data-astro-cid-qyydjdmb> <filter id="sketchy" data-astro-cid-qyydjdmb style="--rotation: 2deg;"> <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="2" data-astro-cid-qyydjdmb style="--rotation: 2deg;"></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" data-astro-cid-qyydjdmb style="--rotation: 2deg;"></feDisplacementMap> </filter> </svg> <div class="social-link-3" data-astro-cid-qyydjdmb style="--rotation: 2deg;"> <a href="https://myanimelist.net/mangalist/Piglettank" target="_blank" class="link-wrapper" data-astro-cid-qyydjdmb style="--rotation: 2deg;"> <div class="style" data-astro-cid-qyydjdmb style="--rotation: 2deg;"> <img src="/astro/mal_white.BSmDGYL9_ZJhUzr.webp" alt="MyAnimeList" data-astro-cid-qyydjdmb="true" width="28" height="28" loading="lazy" decoding="async"> </div> </a> </div> </div> </div> </div>  <script>
+  const greetings = [
+    "Ça va",
+    "¡Buenas!",
+    "Shalom",
+    "おっす！",
+    // "押忍!",
+    "Tjenixen!",
+    "Howdy!",
+    "Moin moin",
+    "Привіт",
+  ];
+  let dates = [
+    getCurrentGregorianDate(),
+    getCurrentIslamicDate(),
+    getCurrentHebrewDate(),
+  ];
+
+  let currentIndex = Math.floor(Math.random() * greetings.length);
+  let currentDateIndex = 0;
+  const title = document.getElementById("title");
+  const dateElement = document.getElementById("date");
+
+  const animateGreeting = () => {
+    title.classList.remove("animating");
+    void title.offsetWidth;
+    title.classList.add("animating");
+  };
+
+  function cycleGreeting() {
+    currentIndex = (currentIndex + 1) % greetings.length;
+    title.textContent = greetings[currentIndex];
+    animateGreeting();
+  }
+
+  if (title) {
+    title.textContent = greetings[currentIndex];
+    animateGreeting();
+
+    title.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        cycleGreeting();
+      }
+    });
+  }
+
+  if (dateElement) {
+    dateElement.textContent = getCurrentGregorianDate();
+
+    dateElement.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        cycleDate();
+      }
+    });
+  }
+
+  function cycleDate() {
+    currentDateIndex = (currentDateIndex + 1) % dates.length;
+    dateElement.textContent = dates[currentDateIndex];
+    dateElement.classList.remove("animating");
+    void dateElement.offsetWidth;
+    dateElement.classList.add("animating");
+  }
+
+  function getCurrentHebrewDate() {
+    const now = new Date();
+    const hebrewDate = new Intl.DateTimeFormat("en-u-ca-hebrew", {
+      day: "numeric",
+      month: "long",
+    }).format(now);
+    return hebrewDate;
+  }
+
+  function getCurrentIslamicDate() {
+    const now = new Date();
+    const islamicDate = new Intl.DateTimeFormat("en-u-ca-islamic", {
+      day: "numeric",
+      month: "long",
+    }).format(now);
+    return islamicDate;
+  }
+
+  function getCurrentGregorianDate() {
+    const now = new Date();
+    const gregorianDate = new Intl.DateTimeFormat("en-u-ca", {
+      day: "numeric",
+      month: "long",
+    }).format(now);
+    return gregorianDate;
+  }
+</script> <a class="block" href="#games" name="games" data-astro-cid-wk2votdk> <div class="imageWrapper" data-astro-cid-wk2votdk> <img src="/astro/games.DHh6QMaW_1pkHip.webp" alt="Games picture" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image"> <img src="/astro/games_hover.IQkKWqSO_2bNRL9.webp" alt="Games hovered" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image-hover"> </div> <h2 style="margin-left: 4px;" data-astro-cid-wk2votdk>Games</h2> </a> <svg style="position: absolute; width: 0; height: 0;" data-astro-cid-dohjnao5> <defs data-astro-cid-dohjnao5> <filter id="brush-edge" data-astro-cid-dohjnao5> <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="4" result="noise" seed="5" data-astro-cid-dohjnao5></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced" data-astro-cid-dohjnao5></feDisplacementMap> <feGaussianBlur in="displaced" stdDeviation="1" data-astro-cid-dohjnao5></feGaussianBlur> </filter> <mask id="brush-mask" data-astro-cid-dohjnao5> <rect x="0" y="0" width="100" height="100" rx="8" ry="8" fill="white" filter="url(#brush-edge)" data-astro-cid-dohjnao5></rect> </mask> </defs> </svg> <a class="card" href="https://flubbermonkeys.itch.io/game" target="_blank" data-astro-cid-dohjnao5> <div class="image-wrapper" data-astro-cid-dohjnao5> <img src="/astro/flubbermonkeys_logo.BCEchbig_1999JN.webp" alt="Flubbermonkeys" data-astro-cid-dohjnao5="true" width="512" height="512" loading="lazy" decoding="async" class="image"> <img src="/astro/flubbermonkeys_gif.BZUU8MjS_ZPJDxE.webp" alt="Flubbermonkeys Game Preview" data-astro-cid-dohjnao5="true" width="360" height="320" loading="lazy" decoding="async" class="hover-image"> </div> <div style="width: 16px;" data-astro-cid-dohjnao5></div> <div class="text-wrapper" data-astro-cid-dohjnao5> <h3 style="margin: 0;" data-astro-cid-dohjnao5>Flubbermonkeys</h3> <p style="margin-top: 2px; margin-bottom: 0;" data-astro-cid-dohjnao5> Cute adventure game for two players. Available on Itch. </p> <div class="tag-wrapper" data-astro-cid-dohjnao5> <div class="tag" data-astro-cid-dohjnao5>Unity</div> </div> </div> </a> <svg style="position: absolute; width: 0; height: 0;" data-astro-cid-dohjnao5> <defs data-astro-cid-dohjnao5> <filter id="brush-edge" data-astro-cid-dohjnao5> <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="4" result="noise" seed="5" data-astro-cid-dohjnao5></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced" data-astro-cid-dohjnao5></feDisplacementMap> <feGaussianBlur in="displaced" stdDeviation="1" data-astro-cid-dohjnao5></feGaussianBlur> </filter> <mask id="brush-mask" data-astro-cid-dohjnao5> <rect x="0" y="0" width="100" height="100" rx="8" ry="8" fill="white" filter="url(#brush-edge)" data-astro-cid-dohjnao5></rect> </mask> </defs> </svg> <a class="card" href="https://frilans-flame.netlify.app" target="_blank" data-astro-cid-dohjnao5> <div class="image-wrapper" data-astro-cid-dohjnao5> <img src="/astro/ff_logo.BqkyXI7r_uXPVn.webp" alt="Frilans Flame Logo" data-astro-cid-dohjnao5="true" width="225" height="225" loading="lazy" decoding="async" class="image"> <img src="/astro/ff_game_gif.D7AIzaTx_21qxTi.webp" alt="Frilans Flame Game Preview" data-astro-cid-dohjnao5="true" width="256" height="256" loading="lazy" decoding="async" class="hover-image"> </div> <div style="width: 16px;" data-astro-cid-dohjnao5></div> <div class="text-wrapper" data-astro-cid-dohjnao5> <h3 style="margin: 0;" data-astro-cid-dohjnao5>Frilans Flame</h3> <p style="margin-top: 2px; margin-bottom: 0;" data-astro-cid-dohjnao5> Endless 2D runner with Frilans Finans theme. Hosted on Netlify. </p> <div class="tag-wrapper" data-astro-cid-dohjnao5> <div class="tag" data-astro-cid-dohjnao5>Flutter</div><div class="tag" data-astro-cid-dohjnao5>Flame</div> </div> </div> </a> <div style="height: 80px;"></div> <a class="block" href="#tools" name="tools" data-astro-cid-wk2votdk> <div class="imageWrapper" data-astro-cid-wk2votdk> <img src="/astro/tools.BrDqLaGs_Z20I1Ad.webp" alt="Tools picture" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image"> <img src="/astro/tools.BrDqLaGs_Z20I1Ad.webp" alt="Tools hovered" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image-hover"> </div> <h2 style="margin-left: 4px;" data-astro-cid-wk2votdk>Tools</h2> </a> <svg style="position: absolute; width: 0; height: 0;" data-astro-cid-dohjnao5> <defs data-astro-cid-dohjnao5> <filter id="brush-edge" data-astro-cid-dohjnao5> <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="4" result="noise" seed="5" data-astro-cid-dohjnao5></feTurbulence> <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced" data-astro-cid-dohjnao5></feDisplacementMap> <feGaussianBlur in="displaced" stdDeviation="1" data-astro-cid-dohjnao5></feGaussianBlur> </filter> <mask id="brush-mask" data-astro-cid-dohjnao5> <rect x="0" y="0" width="100" height="100" rx="8" ry="8" fill="white" filter="url(#brush-edge)" data-astro-cid-dohjnao5></rect> </mask> </defs> </svg> <a class="card" href="https://pokemon-chart.netlify.app/" target="_blank" data-astro-cid-dohjnao5> <div class="image-wrapper" data-astro-cid-dohjnao5> <img src="/astro/pokemon_chart.CaE7BTNG_Z2nmelm.webp" alt="Pokémon Type Chart screenshot" data-astro-cid-dohjnao5="true" width="1824" height="1826" loading="lazy" decoding="async" class="image"> <img src="/astro/pokemon_chart_gif.CjVoM_vN_2r1Vg9.webp" alt="Pokémon Type Chart preview" data-astro-cid-dohjnao5="true" width="400" height="400" loading="lazy" decoding="async" class="hover-image"> </div> <div style="width: 16px;" data-astro-cid-dohjnao5></div> <div class="text-wrapper" data-astro-cid-dohjnao5> <h3 style="margin: 0;" data-astro-cid-dohjnao5>Pokémon Type Chart</h3> <p style="margin-top: 2px; margin-bottom: 0;" data-astro-cid-dohjnao5> Interactive Pokémon type chart. Hosted on Netlify. </p> <div class="tag-wrapper" data-astro-cid-dohjnao5> <div class="tag" data-astro-cid-dohjnao5>Flutter</div> </div> </div> </a> <div style="height: 80px;"></div> <a class="block" href="#gallery" name="gallery" data-astro-cid-wk2votdk> <div class="imageWrapper" data-astro-cid-wk2votdk> <img src="/astro/tools.BrDqLaGs_Z20I1Ad.webp" alt="Gallery picture" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image"> <img src="/astro/tools.BrDqLaGs_Z20I1Ad.webp" alt="Gallery hovered" data-astro-cid-wk2votdk="true" width="128" height="128" loading="lazy" decoding="async" class="header-image-hover"> </div> <h2 style="margin-left: 4px;" data-astro-cid-wk2votdk>Gallery</h2> </a> <div style="margin: 5px" data-astro-cid-aozjdial> <div class="container-wrapper" data-astro-cid-aozjdial> <div class="mason-image" data-astro-cid-rxgv4f4u style="--aspectRatio: 0.5623283909939594;"> <a href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/32499d50-0fa6-45de-b347-e4cb27d3bb83/dcmuu6t-aa39fb21-7323-4766-a393-ad8bebc090ea.png/v1/fill/w_1024,h_1821,q_80,strp/groovy_by_piglettank_dcmuu6t-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTgyMSIsInBhdGgiOiIvZi8zMjQ5OWQ1MC0wZmE2LTQ1ZGUtYjM0Ny1lNGNiMjdkM2JiODMvZGNtdXU2dC1hYTM5ZmIyMS03MzIzLTQ3NjYtYTM5My1hZDhiZWJjMDkwZWEucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.fs1P76tqoxoww0doerpKcPOMVLZbVz9X2FuapLJR1hE" target="_blank" data-astro-cid-rxgv4f4u style="--aspectRatio: 0.5623283909939594;"> <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/32499d50-0fa6-45de-b347-e4cb27d3bb83/dcmuu6t-aa39fb21-7323-4766-a393-ad8bebc090ea.png/v1/fill/w_1024,h_1821,q_80,strp/groovy_by_piglettank_dcmuu6t-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTgyMSIsInBhdGgiOiIvZi8zMjQ5OWQ1MC0wZmE2LTQ1ZGUtYjM0Ny1lNGNiMjdkM2JiODMvZGNtdXU2dC1hYTM5ZmIyMS03MzIzLTQ3NjYtYTM5My1hZDhiZWJjMDkwZWEucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.fs1P76tqoxoww0doerpKcPOMVLZbVz9X2FuapLJR1hE" alt="Groovy" loading="lazy" data-astro-cid-rxgv4f4u style="--aspectRatio: 0.5623283909939594;"> </a> </div> <div class="mason-image" data-astro-cid-rxgv4f4u style="--aspectRatio: 1.4124137931034482;"> <a href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/32499d50-0fa6-45de-b347-e4cb27d3bb83/dbjwo0e-a063bb3b-e79a-4a80-b47a-10eea03ae20a.png/v1/fill/w_1024,h_725,q_80,strp/made_in_abyss___ozen_by_piglettank_dbjwo0e-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzI1IiwicGF0aCI6Ii9mLzMyNDk5ZDUwLTBmYTYtNDVkZS1iMzQ3LWU0Y2IyN2QzYmI4My9kYmp3bzBlLWEwNjNiYjNiLWU3OWEtNGE4MC1iNDdhLTEwZWVhMDNhZTIwYS5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.aD7em3jfpVPHtDBmkUsymAUoH_rRIbIwLr01QGYxXHA" target="_blank" data-astro-cid-rxgv4f4u style="--aspectRatio: 1.4124137931034482;"> <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/32499d50-0fa6-45de-b347-e4cb27d3bb83/dbjwo0e-a063bb3b-e79a-4a80-b47a-10eea03ae20a.png/v1/fill/w_1024,h_725,q_80,strp/made_in_abyss___ozen_by_piglettank_dbjwo0e-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzI1IiwicGF0aCI6Ii9mLzMyNDk5ZDUwLTBmYTYtNDVkZS1iMzQ3LWU0Y2IyN2QzYmI4My9kYmp3bzBlLWEwNjNiYjNiLWU3OWEtNGE4MC1iNDdhLTEwZWVhMDNhZTIwYS5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.aD7em3jfpVPHtDBmkUsymAUoH_rRIbIwLr01QGYxXHA" alt="Ozen" loading="lazy" data-astro-cid-rxgv4f4u style="--aspectRatio: 1.4124137931034482;"> </a> </div> <div class="mason-image" data-astro-cid-rxgv4f4u style="--aspectRatio: 1;"> <a href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/32499d50-0fa6-45de-b347-e4cb27d3bb83/dcyf285-615d7c8c-883a-4a7e-bb1c-27af49b77682.png/v1/fill/w_1024,h_1024,q_80,strp/made_in_abyss___mitty_and_nanachi_by_piglettank_dcyf285-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiIvZi8zMjQ5OWQ1MC0wZmE2LTQ1ZGUtYjM0Ny1lNGNiMjdkM2JiODMvZGN5ZjI4NS02MTVkN2M4Yy04ODNhLTRhN2UtYmIxYy0yN2FmNDliNzc2ODIucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2XqMpAnaHy8CUa3QlwjLWMyN2GyJMiMiJprWGExAOXc" target="_blank" data-astro-cid-rxgv4f4u style="--aspectRatio: 1;"> <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/32499d50-0fa6-45de-b347-e4cb27d3bb83/dcyf285-615d7c8c-883a-4a7e-bb1c-27af49b77682.png/v1/fill/w_1024,h_1024,q_80,strp/made_in_abyss___mitty_and_nanachi_by_piglettank_dcyf285-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiIvZi8zMjQ5OWQ1MC0wZmE2LTQ1ZGUtYjM0Ny1lNGNiMjdkM2JiODMvZGN5ZjI4NS02MTVkN2M4Yy04ODNhLTRhN2UtYmIxYy0yN2FmNDliNzc2ODIucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2XqMpAnaHy8CUa3QlwjLWMyN2GyJMiMiJprWGExAOXc" alt="Mitty and Nanachi" loading="lazy" data-astro-cid-rxgv4f4u style="--aspectRatio: 1;"> </a> </div> <div class="mason-image" data-astro-cid-rxgv4f4u style="--aspectRatio: 0.7785467128027682;"> <a href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/32499d50-0fa6-45de-b347-e4cb27d3bb83/dcfyyph-674f099a-506e-44a4-a335-8af6c934b808.png/v1/fill/w_900,h_1156,q_80,strp/pillow_hug_by_piglettank_dcfyyph-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTE1NiIsInBhdGgiOiIvZi8zMjQ5OWQ1MC0wZmE2LTQ1ZGUtYjM0Ny1lNGNiMjdkM2JiODMvZGNmeXlwaC02NzRmMDk5YS01MDZlLTQ0YTQtYTMzNS04YWY2YzkzNGI4MDgucG5nIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.RnHAZwXuoaPBfudxZnoUxQ5pkM5j3NKJ_1aEO0VcybQ" target="_blank" data-astro-cid-rxgv4f4u style="--aspectRatio: 0.7785467128027682;"> <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/32499d50-0fa6-45de-b347-e4cb27d3bb83/dcfyyph-674f099a-506e-44a4-a335-8af6c934b808.png/v1/fill/w_900,h_1156,q_80,strp/pillow_hug_by_piglettank_dcfyyph-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTE1NiIsInBhdGgiOiIvZi8zMjQ5OWQ1MC0wZmE2LTQ1ZGUtYjM0Ny1lNGNiMjdkM2JiODMvZGNmeXlwaC02NzRmMDk5YS01MDZlLTQ0YTQtYTMzNS04YWY2YzkzNGI4MDgucG5nIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.RnHAZwXuoaPBfudxZnoUxQ5pkM5j3NKJ_1aEO0VcybQ" alt="Pillow Hug" loading="lazy" data-astro-cid-rxgv4f4u style="--aspectRatio: 0.7785467128027682;"> </a> </div> <div class="mason-image" data-astro-cid-rxgv4f4u style="--aspectRatio: 1.9620535714285714;"> <a href="https://www.artstation.com/artwork/8wREEn" target="_blank" data-astro-cid-rxgv4f4u style="--aspectRatio: 1.9620535714285714;"> <img src="https://cdna.artstation.com/p/assets/images/images/046/879/448/medium/johan-fallberg-floongle-screenshot-5.jpg?1646210669" alt="Floongle" loading="lazy" data-astro-cid-rxgv4f4u style="--aspectRatio: 1.9620535714285714;"> </a> </div> </div> </div> <div style="height: 800px;"></div>  </div> </body></html>
